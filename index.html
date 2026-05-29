@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KI Telefon Agent – Anrufe automatisch annehmen, Leads qualifizieren, Termine buchen</title>
+<meta name="description" content="KI-Telefonagent für Immobilienmakler & Hausverwaltungen. Anrufe annehmen, Leads qualifizieren, Termine buchen – direkt im CRM. 24/7, DSGVO mit Bankenstandard, Made in Germany." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CORPORATE IDENTITY – "Vertrauensvolles Blau"
+   Primär / Trust Blue ........ #1D4ED8  (Vertrauen, Tech-Kompetenz)
+   Deep Navy / Sicherheit ..... #0A2540  (Stabilität, Seriosität)
+   Akzent Cyan / Innovation ... #06B6D4  (KI, Frische, Fortschritt)
+   Security Green ............. #15A36A  (Geprüft, Sicher, "Go")
+   Warm Signal (sparsam) ...... #F59E0B  (menschliche Wärme, Highlights)
+   ============================================================ */
+:root{
+  --blue:#1D4ED8;
+  --blue-600:#2563EB;
+  --blue-700:#1E40AF;
+  --navy:#0A2540;
+  --navy-800:#0F2E52;
+  --cyan:#06B6D4;
+  --green:#15A36A;
+  --amber:#F59E0B;
+  --ink:#0F172A;
+  --muted:#5B6B82;
+  --line:#E4EAF2;
+  --bg:#FFFFFF;
+  --bg-soft:#F5F8FD;
+  --bg-tint:#EAF1FE;
+  --white:#fff;
+  --radius:16px;
+  --radius-lg:24px;
+  --shadow:0 10px 30px -12px rgba(10,37,64,.18);
+  --shadow-lg:0 24px 60px -20px rgba(10,37,64,.30);
+  --maxw:1180px;
+  --grad:linear-gradient(135deg,#1D4ED8 0%,#06B6D4 100%);
+  --grad-navy:linear-gradient(150deg,#0A2540 0%,#103a6b 60%,#1D4ED8 130%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.brand{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.15;color:var(--navy);letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:700}
+p{color:var(--muted)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);background:var(--bg-tint);padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.lead{font-size:1.15rem;max-width:680px}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;padding:15px 26px;border-radius:12px;border:0;cursor:pointer;transition:.18s;white-space:nowrap}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 12px 26px -10px rgba(29,78,216,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 34px -10px rgba(29,78,216,.7)}
+.btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn-light:hover{background:rgba(255,255,255,.2)}
+.btn-lg{padding:17px 32px;font-size:1.05rem}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.18rem;color:var(--navy)}
+.logo .mark{width:38px;height:38px;border-radius:11px;background:var(--grad);display:grid;place-items:center;color:#fff;box-shadow:0 6px 14px -4px rgba(29,78,216,.6)}
+.logo .mark svg{width:21px;height:21px}
+.logo small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-weight:600;font-size:.96rem;color:var(--navy);transition:.15s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px}
+
+/* Hero */
+.hero{background:var(--grad-navy);color:#fff;position:relative;overflow:hidden;padding:96px 0 90px}
+.hero::before{content:"";position:absolute;inset:0;background:
+   radial-gradient(600px 380px at 85% 10%,rgba(6,182,212,.30),transparent 60%),
+   radial-gradient(500px 420px at 5% 95%,rgba(29,78,216,.35),transparent 60%)}
+.hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{color:#fff;margin-bottom:20px}
+.hero h1 .hl{background:linear-gradient(120deg,#7dd3fc,#67e8f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p.lead{color:rgba(255,255,255,.88)}
+.hero .eyebrow{background:rgba(255,255,255,.12);color:#9ad9ff}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 26px}
+.trust-row{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.trust-chip{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9)}
+.trust-chip svg{width:18px;height:18px;color:#67e8f9}
+/* Hero visual: call card */
+.call-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--radius-lg);padding:24px;backdrop-filter:blur(8px);box-shadow:var(--shadow-lg)}
+.call-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-weight:800;color:#fff;font-size:1.2rem;flex-shrink:0}
+.call-head b{color:#fff;font-size:1.05rem;display:block}
+.call-head span{color:#9ad9ff;font-size:.82rem}
+.live-dot{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:.78rem;color:#6ee7b7;font-weight:600}
+.live-dot i{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}70%{box-shadow:0 0 0 12px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.bubble{padding:11px 15px;border-radius:14px;font-size:.92rem;margin-bottom:10px;max-width:85%;line-height:1.45}
+.bubble.ai{background:rgba(255,255,255,.16);color:#fff;border-bottom-left-radius:4px}
+.bubble.user{background:#fff;color:var(--navy);margin-left:auto;border-bottom-right-radius:4px}
+.wave{display:flex;align-items:flex-end;gap:4px;height:26px;margin-top:6px}
+.wave i{width:4px;background:#67e8f9;border-radius:3px;animation:wv 1s ease-in-out infinite}
+.wave i:nth-child(2){animation-delay:.1s}.wave i:nth-child(3){animation-delay:.2s}.wave i:nth-child(4){animation-delay:.3s}.wave i:nth-child(5){animation-delay:.4s}.wave i:nth-child(6){animation-delay:.5s}
+@keyframes wv{0%,100%{height:6px}50%{height:24px}}
+
+/* Logos */
+.logos{padding:40px 0;border-bottom:1px solid var(--line);background:var(--bg-soft)}
+.logos p{text-align:center;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:22px}
+.logo-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 38px;align-items:center}
+.logo-strip span{font-family:'Plus Jakarta Sans';font-weight:700;color:#94a3b8;font-size:1.05rem;opacity:.8}
+
+/* Cards / grids */
+.grid{display:grid;gap:24px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.2s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:#cfe0fb}
+.card .ico{width:48px;height:48px;border-radius:13px;background:var(--bg-tint);color:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+.card .ico svg{width:24px;height:24px}
+.card h3{margin-bottom:8px}
+.card p{font-size:.95rem}
+.soft{background:var(--bg-soft)}
+
+/* Agents */
+.agent{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px}
+.agent .ava{width:64px;height:64px;border-radius:18px;flex-shrink:0;display:grid;place-items:center;font-family:'Plus Jakarta Sans';font-weight:800;font-size:1.6rem;color:#fff}
+.agent.lena .ava{background:linear-gradient(135deg,#2563EB,#06B6D4)}
+.agent.leo .ava{background:linear-gradient(135deg,#0A2540,#1D4ED8)}
+.tag{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--bg-tint);color:var(--blue);margin-bottom:6px}
+
+/* Compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.compare .col{border-radius:var(--radius-lg);padding:32px}
+.compare .old{background:#fff;border:1px solid var(--line)}
+.compare .new{background:var(--grad-navy);color:#fff;position:relative;overflow:hidden}
+.compare .new::after{content:"Bis zu 70% Ersparnis";position:absolute;top:18px;right:-44px;transform:rotate(45deg);background:var(--amber);color:#3b2700;font-size:.7rem;font-weight:800;padding:6px 56px}
+.compare ul{list-style:none;margin-top:14px}
+.compare li{display:flex;gap:11px;padding:9px 0;font-size:.96rem;border-top:1px dashed rgba(120,140,170,.25)}
+.compare li svg{width:20px;height:20px;flex-shrink:0;margin-top:2px}
+.compare .old li{color:var(--muted)}.compare .old svg{color:#cbd5e1}
+.compare .new li{color:rgba(255,255,255,.92);border-color:rgba(255,255,255,.13)}.compare .new svg{color:#6ee7b7}
+.compare h3{margin-bottom:4px}.compare .new h3{color:#fff}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto}
+.qa{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
+.qa summary{padding:20px 22px;font-weight:700;font-family:'Plus Jakarta Sans';color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-size:1.5rem;color:var(--blue);font-weight:600;transition:.2s}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa .a{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column}
+.plan.featured{border:2px solid var(--blue);box-shadow:var(--shadow-lg);position:relative}
+.plan.featured .ribbon{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.74rem;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
+.plan h3{font-size:1.3rem}
+.price{font-family:'Plus Jakarta Sans';font-size:2.6rem;font-weight:800;color:var(--navy);margin:10px 0 2px}
+.price small{font-size:1rem;font-weight:600;color:var(--muted)}
+.plan ul{list-style:none;margin:20px 0;flex:1}
+.plan li{display:flex;gap:10px;padding:7px 0;font-size:.94rem;color:var(--ink)}
+.plan li svg{width:19px;height:19px;color:var(--green);flex-shrink:0;margin-top:3px}
+
+/* Security band */
+.secure{background:var(--grad-navy);color:#fff;border-radius:var(--radius-lg);padding:48px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;overflow:hidden;position:relative}
+.secure h2{color:#fff}.secure p{color:rgba(255,255,255,.85)}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:18px}
+.badge b{color:#fff;font-family:'Plus Jakarta Sans';display:block;margin-bottom:3px}
+.badge span{font-size:.85rem;color:rgba(255,255,255,.75)}
+
+/* Testimonial */
+.quote{max-width:820px;margin:0 auto;text-align:center}
+.stars{color:var(--amber);font-size:1.4rem;letter-spacing:3px;margin-bottom:18px}
+.quote blockquote{font-family:'Plus Jakarta Sans';font-size:1.5rem;line-height:1.5;font-weight:600;color:var(--navy);margin-bottom:22px;letter-spacing:-.01em}
+.quote cite{font-style:normal;color:var(--muted);font-weight:600}
+
+/* CTA / Funnel form */
+.funnel{background:var(--grad);border-radius:var(--radius-lg);padding:52px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.funnel::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 300px at 80% 0,rgba(255,255,255,.18),transparent 60%)}
+.funnel h2{color:#fff;position:relative}
+.funnel p{color:rgba(255,255,255,.9);position:relative;max-width:560px;margin:14px auto 0}
+.form-card{position:relative;background:#fff;border-radius:var(--radius-lg);max-width:560px;margin:30px auto 0;padding:30px;text-align:left;box-shadow:var(--shadow-lg)}
+.form-card label{display:block;font-size:.85rem;font-weight:600;color:var(--navy);margin:0 0 6px}
+.form-card .field{margin-bottom:16px}
+.form-card input,.form-card select{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;font:inherit;font-size:.95rem;color:var(--ink);transition:.15s}
+.form-card input:focus,.form-card select:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px var(--bg-tint)}
+.form-card .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:12px}
+.success{display:none;text-align:center;padding:20px}
+.success svg{width:64px;height:64px;color:var(--green);margin:0 auto 14px}
+.success h3{font-size:1.5rem;margin-bottom:8px}
+
+/* Blog */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:.2s;display:flex;flex-direction:column}
+.post:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:#cfe0fb}
+.post .cover{height:160px;background:var(--grad-navy);position:relative;display:grid;place-items:center}
+.post .cover svg{width:54px;height:54px;color:rgba(255,255,255,.85)}
+.post .cover.c2{background:linear-gradient(135deg,#0A2540,#15A36A)}
+.post .cover.c3{background:linear-gradient(135deg,#1D4ED8,#06B6D4)}
+.post .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.post .cat{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:8px}
+.post h3{font-size:1.1rem;margin-bottom:8px}
+.post p{font-size:.9rem;flex:1}
+.post .meta{font-size:.8rem;color:var(--muted);margin-top:14px;display:flex;gap:10px;align-items:center}
+.article{max-width:760px;margin:0 auto}
+.article .cat{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}
+.article h1{margin:10px 0 14px}
+.article .amETA{color:var(--muted);font-size:.9rem;margin-bottom:26px}
+.article h2{font-size:1.5rem;margin:30px 0 12px}
+.article p{color:var(--ink);margin-bottom:16px;font-size:1.05rem}
+.article ul{margin:0 0 16px 22px;color:var(--ink)}
+.article li{margin-bottom:7px}
+.back{display:inline-flex;align-items:center;gap:7px;color:var(--blue);font-weight:600;margin-bottom:24px;cursor:pointer}
+
+/* Footer */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 30px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
+footer h4{color:#fff;font-size:.95rem;margin-bottom:16px;letter-spacing:.02em}
+footer a{display:block;color:rgba(255,255,255,.7);padding:5px 0;transition:.15s}
+footer a:hover{color:#67e8f9}
+.foot-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.foot-badges span{font-size:.72rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:5px 11px;border-radius:8px;color:rgba(255,255,255,.85)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem}
+
+/* page routing */
+.page{display:none}
+.page.active{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Responsive */
+@media(max-width:960px){
+  .hero .container{grid-template-columns:1fr;gap:36px}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .price-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr 1fr}
+  .compare,.secure{grid-template-columns:1fr}
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 22px;border-bottom:1px solid var(--line);gap:6px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 0;width:100%;border-bottom:1px solid var(--line)}
+  .burger{display:flex}
+  .nav-cta .btn-ghost{display:none}
+}
+@media(max-width:560px){
+  .g4,.g3,.g2,.blog-grid{grid-template-columns:1fr}
+  .form-card .row{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .funnel,.secure{padding:32px 22px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo" onclick="go('home')">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+      <span>KI&nbsp;Telefon&nbsp;Agent<small>AI Voice Impact</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#features" onclick="go('home','features')">Funktionen</a>
+      <a href="#preise" onclick="go('preise')">Preise</a>
+      <a href="#blog" onclick="go('blog')">Blog</a>
+      <a href="#ueber" onclick="go('ueber')">Über uns</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+494074302560" class="btn btn-ghost">040 – 7430 2560</a>
+      <a class="btn btn-primary" onclick="go('termin')">Strategiegespräch</a>
+      <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="eyebrow">onOffice Marketplace Partner</span>
+        <h1>Dein <span class="hl">KI-Telefonagent</span> für Immobilien & Hausverwaltung</h1>
+        <p class="lead">Anrufe annehmen, Leads qualifizieren, Termine buchen, Suchprofile & Aufgaben anlegen – vollautomatisch direkt im CRM. 24/7 erreichbar, in über 100 Sprachen.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" onclick="go('termin')">Kostenlosen Testanruf anfordern</a>
+          <a class="btn btn-light btn-lg" href="tel:+494074302560">📞 Live anrufen</a>
+        </div>
+        <div class="trust-row">
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>DSGVO · Bankenstandard</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>Made in Germany</span>
+          <span class="trust-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>99,9 % Uptime SLA</span>
+        </div>
+      </div>
+      <div>
+        <div class="call-card">
+          <div class="call-head">
+            <div class="avatar">L</div>
+            <div><b>Lena</b><span>KI-Agentin · eingehender Anruf</span></div>
+            <div class="live-dot"><i></i>LIVE</div>
+          </div>
+          <div class="bubble ai">Guten Tag, hier ist Lena von Musterimmobilien. Wie kann ich Ihnen helfen?</div>
+          <div class="bubble user">Ich interessiere mich für die Wohnung in der Hafenstraße.</div>
+          <div class="bubble ai">Sehr gern! Ich lege Ihnen ein Suchprofil an und sende das Exposé per E-Mail. Passt Ihnen ein Besichtigungstermin am Donnerstag um 15 Uhr?</div>
+          <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <div class="logos">
+    <div class="container">
+      <p>Vertrauen führender Immobilienbüros</p>
+      <div class="logo-strip">
+        <span>Wentzel Dr.</span><span>Frank Hoffmann Immobilien</span><span>Knabe Immobilien</span><span>Stoffels Immobilien</span><span>Mike Schneider Immobilien</span><span>Thomas Franck Immobilien</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section>
+    <div class="container center">
+      <span class="eyebrow">Das Problem</span>
+      <h2>Klingelt's bei dir auch ständig?</h2>
+      <p class="lead">Verpasste Anrufe sind verpasste Umsätze. Makler und Hausverwalter verlieren täglich Stunden – und Leads.</p>
+      <div class="grid g3" style="margin-top:42px;text-align:left">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Zeitfresser</h3><p>Rückrufe, Terminabsprachen, manuelle Protokolle – Stunden, die fürs Kerngeschäft fehlen.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H8l-4 4z"/></svg></div><h3>Kommunikationschaos</h3><p>Portale, E-Mails und Telefon gleichzeitig – jedes Gespräch muss manuell dokumentiert werden.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg></div><h3>Dauerstress</h3><p>Du bist im Gespräch – und das Telefon klingelt weiter. Deine Kunden warten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="soft">
+    <div class="container">
+      <div class="center"><span class="eyebrow">Die Lösung</span><h2>Lena & Leo übernehmen für dich</h2><p class="lead">Deine KI-Telefonagenten – empathisch, zuverlässig und 24/7 im Einsatz. Dualplex-Spracharchitektur für natürliche Dialoge in Echtzeit (Antwort in &lt; 600 ms).</p></div>
+      <div class="grid g2" style="margin-top:40px">
+        <div class="agent lena">
+          <div class="ava">L</div>
+          <div><span class="tag">Inbound & Service</span><h3>Lena</h3><p>Nimmt Anrufe an, qualifiziert Leads, legt Suchaufträge an, bucht Termine, notiert Rückrufwünsche, versendet Exposés und leitet wichtige Gespräche weiter.</p></div>
+        </div>
+        <div class="agent leo">
+          <div class="ava">L</div>
+          <div><span class="tag">Outbound & Sales</span><h3>Leo</h3><p>Telefoniert Kontaktlisten systematisch ab, reaktiviert inaktive Leads, qualifiziert Interessenten, aktualisiert Suchprofile und vereinbart Termine – skalierbar.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="center"><span class="eyebrow">Funktionen</span><h2>Was Lena & Leo können</h2><p class="lead">Tief integriert ins CRM – jeder Agent kennt die benötigten Prozesse.</p></div>
+      <div class="grid g4" style="margin-top:42px">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Kontakterkennung</h3><p>Erkennt Anrufer im CRM, begrüßt persönlich mit Namen. Neue Anrufer werden automatisch angelegt.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 8l8 5 8-5"/></svg></div><h3>Exposé-Versand</h3><p>Versendet Objektexposés automatisch per E-Mail direkt aus dem Gespräch.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h3>Suchprofile verwalten</h3><p>Suchprofile anlegen, verwalten und löschen – Ort, Budget, Zimmer, Fläche.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h12M11 8l4 4-4 4M21 4v16"/></svg></div><h3>Rückruf & Weiterleitung</h3><p>Warme Weiterleitung mit Kontextzusammenfassung ans Team oder Rückruf-Aufgaben im CRM.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div><h3>Kalender-Termine</h3><p>Bucht Termine direkt im Kalender mit SMS-Bestätigung – mit oder ohne Besichtigung.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div><h3>Aufgaben & Aktivitäten</h3><p>Erstellt automatisch CRM-Aktivitäten, Aufgaben, SMS-Bestätigungen und E-Mail-Follow-ups.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>100+ Sprachen</h3><p>Automatische Spracherkennung, Wechsel mitten im Gespräch. Transkription bleibt auf Deutsch.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>DSGVO & Datenschutz</h3><p>EU-Region Frankfurt, ISO-27001-Server, AES-256, TÜV-NORD-zertifiziert, EU-AI-Act-konform.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="soft">
+    <div class="container">
+      <div class="center"><span class="eyebrow">Kostenvergleich</span><h2>Günstiger als eine Halbtagskraft. Und nie krank.</h2></div>
+      <div class="compare" style="margin-top:40px">
+        <div class="col old">
+          <h3>Traditionelles Team</h3><p>Personalintensiv & schwer skalierbar</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Hohe Personalkosten</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Schulungen & Qualitätsmanagement</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Krankheits- & Urlaubsausfälle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Begrenzte Erreichbarkeit</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>Skalierung = mehr Personal</li>
+          </ul>
+        </div>
+        <div class="col new">
+          <h3>KI-Telefonagent</h3><p>Sofort startklar, planbar, skalierbar</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Ab 0,15 € / Minute (30-Sek.-Takt)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>24/7 Verfügbarkeit – 99,9 % Uptime</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Keine Ausfälle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Sofort skalierbar – auch Outbound</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>CRM-Dokumentation inklusive</li>
+          </ul>
+          <a class="btn btn-light" style="margin-top:20px" onclick="go('preise')">Preise ansehen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section>
+    <div class="container quote">
+      <span class="eyebrow">Kundenstimmen</span>
+      <div class="stars">★★★★★</div>
+      <blockquote>„Bei Anrufen geht endlich sofort jemand ran – und genau das wollen die Leute. Danach habe ich alles sauber in meinem onOffice-Prozess dokumentiert. Strukturiert, zuverlässig, lösungsorientiert. Ich bin begeistert.“</blockquote>
+      <cite>— Thomas Franck · Immobilienmakler & Inhaber, Schwerin (35 Jahre Erfahrung)</cite>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="soft">
+    <div class="container">
+      <div class="secure">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#9ad9ff">Datenschutz & Sicherheit</span>
+          <h2>DSGVO mit Bankenstandard</h2>
+          <p>Deine Daten und die deiner Kunden bleiben in Deutschland. Verschlüsselt, zertifiziert und juristisch geprüft – damit du der KI vertrauen kannst.</p>
+          <div class="foot-badges" style="margin-top:18px">
+            <span>BDSG-konform</span><span>EU AI Act</span><span>TÜV-NORD Datenschutz</span><span>AVV inklusive</span>
+          </div>
+        </div>
+        <div class="badges">
+          <div class="badge"><b>ISO 27001</b><span>Zertifizierte Server (AWS Frankfurt)</span></div>
+          <div class="badge"><b>AES-256</b><span>Verschlüsselung (Transit + Rest)</span></div>
+          <div class="badge"><b>EU-Region</b><span>Datenresidenz-Garantie Frankfurt</span></div>
+          <div class="badge"><b>Volljurist</b><span>Geschäftsführung mit Rechtsexpertise</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="center"><span class="eyebrow">FAQ</span><h2>Häufig gestellte Fragen</h2></div>
+      <div class="faq" style="margin-top:36px">
+        <details class="qa"><summary>Was ist ein KI-Telefonagent?</summary><div class="a">Eine Software, die echte Telefonate automatisiert führt – mit natürlicher Sprache, empathisch, in über 100 Sprachen. Die Dualplex-Architektur kombiniert Premium-Stimmqualität mit Antwortzeiten unter 600 ms. Im Unterschied zum Anrufbeantworter führt sie einen echten Dialog und löst automatisch Folgeprozesse im CRM aus.</div></details>
+        <details class="qa"><summary>Ist das DSGVO-konform?</summary><div class="a">Ja – auf Bankenstandard-Niveau. Alle Daten werden auf ISO-27001-zertifizierten EU-Servern (AWS Frankfurt) verarbeitet, AES-256-verschlüsselt. Volljurist als Geschäftsführer, TÜV-NORD-zertifizierter Datenschutzbeauftragter, EU AI Act konform, AVV inklusive.</div></details>
+        <details class="qa"><summary>Klingt das nicht wie ein Roboter?</summary><div class="a">Nein. Premium-Stimmtechnologie, Antwort in unter 600 ms, Erkennung von Unterbrechungen und Voice Activity Detection sorgen für ein menschliches Gesprächsgefühl.</div></details>
+        <details class="qa"><summary>Was kostet der KI-Telefonagent?</summary><div class="a">Tarife starten ab 39 €/Monat inkl. 100 Freiminuten, bzw. 189 €/Monat inkl. 600 Freiminuten für onOffice-Kunden. Abrechnung im 30-Sekunden-Takt ab 0,15 €/Minute. Monatlich kündbar, keine Mindestlaufzeit.</div></details>
+        <details class="qa"><summary>Wie schnell ist die Einrichtung?</summary><div class="a">Grundeinrichtung unter 5 Minuten: Tarif wählen, Agent konfigurieren, KI-Nummer ist sofort aktiv. Gesprächsabläufe gestaltest du über den visuellen Prompt-Editor – ohne Programmierung.</div></details>
+        <details class="qa"><summary>Funktioniert das mit meinem CRM?</summary><div class="a">Ja. Neben der tiefen onOffice-Integration unterstützen wir HubSpot, Salesforce, Pipedrive, Zoho und Google Sheets nativ. Über Zapier sind 5.000+ weitere Tools anbindbar.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="funnel">
+        <h2>Erlebe die KI live – fordere deinen Testanruf an</h2>
+        <p>In 60 Sekunden hörst du, wie Lena & Leo für dich telefonieren. Kostenlos, unverbindlich, made in Hamburg.</p>
+        <a class="btn" style="background:#fff;color:var(--blue);margin-top:24px" onclick="go('termin')">Jetzt Testanruf anfordern →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PREISE ================= -->
+<div class="page" id="page-preise">
+  <section>
+    <div class="container">
+      <div class="center"><span class="eyebrow">Preise</span><h2>Transparent, fair, monatlich kündbar</h2><p class="lead">Du zahlst nur, was tatsächlich telefoniert wird. Keine Mindestlaufzeit, keine versteckten Kosten.</p></div>
+      <div class="price-grid" style="margin-top:48px">
+        <div class="plan">
+          <h3>Standard</h3><p>Für Einzelmakler & Einstieg</p>
+          <div class="price">39 €<small>/ Monat</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>100 Freiminuten inklusive</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Lena – Inbound-Agentin</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Visueller Prompt-Editor</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>E-Mail- & SMS-Follow-ups</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>DSGVO & AVV inklusive</li>
+          </ul>
+          <a class="btn btn-ghost" onclick="go('termin')">Auswählen</a>
+        </div>
+        <div class="plan featured">
+          <span class="ribbon">Beliebt · onOffice</span>
+          <h3>onOffice Pro</h3><p>Für Teams mit onOffice-CRM</p>
+          <div class="price">189 €<small>/ Monat</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>600 Freiminuten inklusive</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Lena & Leo (In- & Outbound)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Tiefe onOffice-Integration</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>30-Sek.-Takt ab 0,15 €/Min.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Persönliches Onboarding</li>
+          </ul>
+          <a class="btn btn-primary" onclick="go('termin')">Strategiegespräch buchen</a>
+        </div>
+        <div class="plan">
+          <h3>Enterprise</h3><p>Für Hausverwaltungen & Ketten</p>
+          <div class="price">Individuell</div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Custom-CRM-Integration</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Eigene/geklonte Stimme</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Notfall-Eskalation & SLA</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>5.000+ Tools via Zapier</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Dedizierter Ansprechpartner</li>
+          </ul>
+          <a class="btn btn-ghost" onclick="go('termin')">Kontakt aufnehmen</a>
+        </div>
+      </div>
+      <p class="center" style="margin-top:28px;font-size:.9rem">Kein onOffice? Kein Problem – wir integrieren HubSpot, Salesforce, Pipedrive, Zoho &amp; 5.000+ Tools.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ================= BLOG ================= -->
+<div class="page" id="page-blog">
+  <section>
+    <div class="container">
+      <div class="center"><span class="eyebrow">Blog</span><h2>Wissen rund um KI-Telefonie & Immobilien</h2><p class="lead">Praxis, Datenschutz und Strategien für moderne Makler und Hausverwaltungen.</p></div>
+      <div class="blog-grid" style="margin-top:44px">
+        <article class="post" onclick="go('post1')">
+          <div class="cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.18 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="body"><span class="cat">Vertrieb</span><h3>Warum die erste Minute über deinen Lead entscheidet</h3><p>Leads, die in unter 60 Sekunden zurückgerufen werden, konvertieren bis zu 7× besser. So gewinnst du das Rennen.</p><div class="meta">5 Min. Lesezeit · KI Telefon Agent</div></div>
+        </article>
+        <article class="post" onclick="go('post2')">
+          <div class="cover c2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="body"><span class="cat">Datenschutz</span><h3>DSGVO & KI-Telefonie: Was Makler wissen müssen</h3><p>EU-Server, AES-256, AVV: Wir erklären, worauf es bei datenschutzkonformer KI-Telefonie wirklich ankommt.</p><div class="meta">7 Min. Lesezeit · KI Telefon Agent</div></div>
+        </article>
+        <article class="post" onclick="go('post3')">
+          <div class="cover c3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div>
+          <div class="body"><span class="cat">Hausverwaltung</span><h3>Mieterservice 24/7: KI für Hausverwaltungen</h3><p>Schadensmeldungen, Notfall-Eskalation und Termin-Koordination – rund um die Uhr und revisionssicher.</p><div class="meta">6 Min. Lesezeit · KI Telefon Agent</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG POSTS -->
+<div class="page" id="page-post1"><section><div class="container article">
+  <span class="back" onclick="go('blog')">← Zurück zum Blog</span>
+  <span class="cat">Vertrieb</span>
+  <h1>Warum die erste Minute über deinen Lead entscheidet</h1>
+  <p class="amETA">5 Min. Lesezeit · KI Telefon Agent</p>
+  <p>Im Immobiliengeschäft zählt Geschwindigkeit. Studien zeigen seit Jahren dasselbe Muster: Wer einen neuen Lead innerhalb der ersten 60 Sekunden kontaktiert, hat eine drastisch höhere Chance, ihn zu qualifizieren und in einen Termin zu verwandeln. Nach fünf Minuten sinkt die Kontaktwahrscheinlichkeit bereits massiv.</p>
+  <h2>Das Problem mit manuellen Rückrufen</h2>
+  <p>Ein Makler kann nicht rund um die Uhr ans Telefon. Anfragen kommen abends, am Wochenende, während Besichtigungen. Genau dann entscheidet sich, ob ein Interessent bei dir bleibt – oder beim Wettbewerb anruft.</p>
+  <h2>Wie ein KI-Telefonagent die Lücke schließt</h2>
+  <ul>
+    <li>Sofortkontakt: Neue Leads aus Portalen werden in Sekunden angerufen.</li>
+    <li>Qualifizierung: Budget, Zeitrahmen und Objektwunsch werden direkt erfasst.</li>
+    <li>Terminbuchung: Besichtigungen landen automatisch im Kalender – mit SMS-Bestätigung.</li>
+    <li>Dokumentation: Jedes Gespräch wird sauber im CRM protokolliert.</li>
+  </ul>
+  <p>Das Ergebnis: kein verlorener Lead mehr, weil niemand abnimmt. Und dein Team konzentriert sich auf die Gespräche, die wirklich zählen.</p>
+  <a class="btn btn-primary" style="margin-top:14px" onclick="go('termin')">Testanruf anfordern →</a>
+</div></section></div>
+
+<div class="page" id="page-post2"><section><div class="container article">
+  <span class="back" onclick="go('blog')">← Zurück zum Blog</span>
+  <span class="cat">Datenschutz</span>
+  <h1>DSGVO & KI-Telefonie: Was Makler wissen müssen</h1>
+  <p class="amETA">7 Min. Lesezeit · KI Telefon Agent</p>
+  <p>KI am Telefon verarbeitet personenbezogene Daten – Namen, Telefonnummern, Suchwünsche. Umso wichtiger ist es, dass die Lösung von Grund auf datenschutzkonform gebaut ist. Hier sind die Kriterien, auf die du achten solltest.</p>
+  <h2>1. Datenresidenz in der EU</h2>
+  <p>Alle Daten sollten ausschließlich auf EU-Servern verarbeitet werden. Wir nutzen AWS Frankfurt – deine Daten bleiben in Deutschland.</p>
+  <h2>2. Verschlüsselung & Zertifizierung</h2>
+  <p>AES-256-Verschlüsselung bei Übertragung und Speicherung, auf ISO-27001-zertifizierten Servern. Sensible Daten werden automatisch maskiert.</p>
+  <h2>3. Rechtliche Absicherung</h2>
+  <ul>
+    <li>Auftragsverarbeitungsvertrag (AVV) standardmäßig enthalten</li>
+    <li>TÜV-NORD-zertifizierter Datenschutzbeauftragter</li>
+    <li>EU-AI-Act-konform</li>
+    <li>Volljurist als Geschäftsführer</li>
+  </ul>
+  <p>So erfüllst du nicht nur die DSGVO, sondern vermittelst auch deinen Kunden das gute Gefühl, dass ihre Daten sicher sind.</p>
+  <a class="btn btn-primary" style="margin-top:14px" onclick="go('termin')">Mehr zur Sicherheit erfahren →</a>
+</div></section></div>
+
+<div class="page" id="page-post3"><section><div class="container article">
+  <span class="back" onclick="go('blog')">← Zurück zum Blog</span>
+  <span class="cat">Hausverwaltung</span>
+  <h1>Mieterservice 24/7: KI für Hausverwaltungen</h1>
+  <p class="amETA">6 Min. Lesezeit · KI Telefon Agent</p>
+  <p>Hausverwaltungen stehen unter Dauerdruck: Mieter rufen zu jeder Tages- und Nachtzeit an – mit Schadensmeldungen, Fragen und Notfällen. Lena übernimmt den telefonischen Mieterservice rund um die Uhr.</p>
+  <h2>Was Lena für Hausverwalter leistet</h2>
+  <ul>
+    <li>Mieteranfragen 24/7 – auch nachts und am Wochenende</li>
+    <li>Schadensmeldungen erfassen, protokollieren und eskalieren</li>
+    <li>Handwerker-Termine direkt vereinbaren und per SMS bestätigen</li>
+    <li>Notfall-Eskalation an den Bereitschaftsdienst</li>
+    <li>Revisionssichere, verschlüsselte Gesprächsdokumentation</li>
+  </ul>
+  <p>So bleibt kein Anruf liegen, dringende Fälle werden sofort weitergeleitet, und dein Team wird spürbar entlastet.</p>
+  <a class="btn btn-primary" style="margin-top:14px" onclick="go('termin')">Strategiegespräch buchen →</a>
+</div></section></div>
+
+<!-- ================= ÜBER UNS ================= -->
+<div class="page" id="page-ueber">
+  <section>
+    <div class="container">
+      <div class="center"><span class="eyebrow">Über uns</span><h2>AI Voice Impact – made in Hamburg</h2><p class="lead">Wir bauen den zuverlässigsten KI-Telefonagenten für die Immobilienbranche – DSGVO-konform, empathisch und tief ins CRM integriert.</p></div>
+      <div class="grid g3" style="margin-top:42px;text-align:left">
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg></div><h3>Standort Hamburg</h3><p>Hohe Bleichen 8, 20354 Hamburg. Persönlich erreichbar, mit echtem Team vor Ort.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Sicherheit zuerst</h3><p>Volljurist in der Geschäftsführung, TÜV-NORD-zertifizierter Datenschutz, EU AI Act konform.</p></div>
+        <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Für Makler gebaut</h3><p>Tiefe onOffice-Integration und Prozesse, die Makler und Hausverwalter wirklich brauchen.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:40px"><a class="btn btn-primary btn-lg" onclick="go('termin')">Lerne uns im Strategiegespräch kennen →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= TERMIN / FUNNEL ================= -->
+<div class="page" id="page-termin">
+  <section>
+    <div class="container">
+      <div class="funnel">
+        <h2>Kostenlosen Testanruf anfordern</h2>
+        <p>Trag dich kurz ein – wir rufen dich an und zeigen live, wie Lena & Leo für dich telefonieren. Unverbindlich & kostenlos.</p>
+        <div class="form-card">
+          <form id="leadForm" onsubmit="return submitForm(event)">
+            <div class="row">
+              <div class="field"><label>Vorname *</label><input required name="vn" placeholder="Max" /></div>
+              <div class="field"><label>Nachname *</label><input required name="nn" placeholder="Mustermann" /></div>
+            </div>
+            <div class="field"><label>Telefonnummer *</label><input required name="tel" type="tel" placeholder="+49 …" /></div>
+            <div class="field"><label>E-Mail *</label><input required name="mail" type="email" placeholder="max@firma.de" /></div>
+            <div class="field"><label>Welches CRM nutzt du?</label>
+              <select name="crm"><option>onOffice</option><option>HubSpot</option><option>Salesforce</option><option>Pipedrive</option><option>Zoho</option><option>Anderes / keins</option></select>
+            </div>
+            <button class="btn btn-primary btn-lg" style="width:100%" type="submit">Testanruf jetzt anfordern</button>
+            <p class="form-note">Mit dem Absenden stimmst du der Verarbeitung gemäß DSGVO zu. Keine Weitergabe an Dritte.</p>
+          </form>
+          <div class="success" id="success">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+            <h3>Danke! 🎉</h3>
+            <p>Deine Anfrage ist eingegangen. Lena meldet sich in Kürze bei dir – meist innerhalb weniger Minuten.</p>
+          </div>
+        </div>
+        <p style="position:relative;margin-top:18px;color:rgba(255,255,255,.85);font-size:.9rem">Lieber direkt sprechen? <a href="tel:+494074302560" style="color:#fff;text-decoration:underline">040 – 7430 2560</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span style="color:#fff">KI Telefon Agent</span></div>
+        <p style="color:rgba(255,255,255,.65);font-size:.9rem;max-width:300px">Der KI-Telefonagent für Immobilienmakler & Hausverwaltungen. 24/7 erreichbar, DSGVO mit Bankenstandard.</p>
+        <div class="foot-badges"><span>DSGVO-konform</span><span>onOffice Marketplace</span><span>Made in Hamburg</span></div>
+      </div>
+      <div><h4>Produkt</h4><a onclick="go('home','features')">Funktionen</a><a onclick="go('preise')">Preise</a><a onclick="go('home')">onOffice Integration</a><a onclick="go('home')">Custom CRM</a></div>
+      <div><h4>Unternehmen</h4><a onclick="go('ueber')">Über uns</a><a onclick="go('blog')">Blog</a><a onclick="go('termin')">Strategiegespräch</a><a href="tel:+494074302560">040 – 7430 2560</a></div>
+      <div><h4>Rechtliches</h4><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a><a href="#">AVV</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 KI Telefon Agent · AI Voice Impact. Alle Rechte vorbehalten.</span><span>Hohe Bleichen 8 · 20354 Hamburg</span></div>
+  </div>
+</footer>
+
+<script>
+function go(page, anchor){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  var el=document.getElementById('page-'+page);
+  if(el){el.classList.add('active');}
+  document.getElementById('navlinks').classList.remove('open');
+  if(anchor){
+    setTimeout(function(){var a=document.getElementById(anchor);if(a)a.scrollIntoView({behavior:'smooth'});},60);
+  } else {
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  if(history.pushState){history.pushState(null,'','#'+page);}
+  return false;
+}
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('leadForm').style.display='none';
+  document.getElementById('success').style.display='block';
+  return false;
+}
+// simple hash routing on load/back
+function routeFromHash(){
+  var h=(location.hash||'#home').replace('#','');
+  if(document.getElementById('page-'+h)){go(h);}
+}
+window.addEventListener('popstate',routeFromHash);
+window.addEventListener('load',function(){ if(location.hash) routeFromHash(); });
+</script>
+</body>
+</html>
