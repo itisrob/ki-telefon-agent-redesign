@@ -294,3 +294,8 @@ footer a:hover{color:var(--gold-lt)}
   section{padding:62px 0}
   .funnel,.secure{padding:34px 22px}
 }
+
+/* Video poster thumbnails */
+.video-ph{background-size:cover;background-position:center}
+.video-ph::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,30,63,.38),rgba(10,30,63,.72));z-index:0}
+.video-ph>*{position:relative;z-index:1}
