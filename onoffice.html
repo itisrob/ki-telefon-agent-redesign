@@ -14,18 +14,50 @@
 <header>
   <div class="container nav">
     <a href="index.html" class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.3 3.6a6 6 0 0 1 5.1 5.1"/><path d="M14.5 7.2a3 3 0 0 1 2.4 2.4"/><path d="M6.5 4h2.5l1.3 3.2-1.9 1.2a11 11 0 0 0 5 5l1.2-1.9 3.2 1.3v2.5a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"/></svg></span><span>KI&nbsp;Telefon-Agent<small>AI VOICE IMPACT</small></span></a>
-    <nav class="nav-links" id="navlinks"><div class="nav-item has-sub"><a href="onoffice.html" class="nav-top">Lösungen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub"><a href="onoffice.html">onOffice-Integration</a><a href="custom.html">Custom CRM</a><a href="use-cases.html">Use Cases</a><a href="interview.html">Interview</a></div></div><a href="preise.html">Preise</a><a href="blog.html">Blog</a><a href="ueber-uns.html">Über uns</a></nav>
+    <nav class="nav-links" id="navlinks"><div class="nav-item has-sub"><a href="onoffice.html" class="nav-top">Lösungen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub"><a href="onoffice.html">onOffice-Integration</a><a href="custom.html">Custom CRM</a><a href="use-cases.html">Use Cases</a><a href="interview.html">Interview</a></div></div><a href="preise.html">Preise</a><a href="blog.html">Blog</a><a href="ueber-uns.html">Über uns</a><a href="tel:+494074302560" class="mob-tel">040 – 7430 2560</a><a href="termin.html" class="btn btn-gold mob-cta">Strategiegespräch</a></nav>
     <div class="nav-cta"><a href="tel:+494074302560" class="btn btn-ghost">040 – 7430 2560</a><a class="btn btn-gold" href="termin.html">Strategiegespräch</a><button class="burger" onclick="toggleNav()"><span></span><span></span><span></span></button></div>
   </div>
 </header>
 
+<style>
+.oo-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.oo-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(230,199,106,.3);border-radius:999px;padding:8px 14px;color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600;margin-top:18px}
+.oo-badge img{height:18px;filter:brightness(0) invert(1);opacity:.92}
+.oo-flow{background:rgba(255,255,255,.06);border:1px solid rgba(230,199,106,.28);border-radius:24px;padding:24px;backdrop-filter:blur(8px);box-shadow:var(--shadow-lg)}
+.oo-flow .oo-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid rgba(230,199,106,.2);margin-bottom:8px}
+.oo-flow .oo-head .oo-logo{display:flex;align-items:center;gap:8px;color:#fff;font-weight:600;font-family:'Inter'}
+.oo-flow .oo-head .oo-logo img{height:22px;filter:brightness(0) invert(1)}
+.oo-flow .live{display:flex;align-items:center;gap:7px;font-size:.74rem;color:#7ee0b0;font-weight:600}
+.oo-flow .live i{width:9px;height:9px;border-radius:50%;background:#34d399;animation:pulse 1.8s infinite}
+.oo-step{display:flex;gap:13px;align-items:flex-start;position:relative;padding:13px 4px}
+.oo-step:not(:last-child)::after{content:"";position:absolute;left:21px;top:46px;bottom:-4px;width:2px;background:linear-gradient(var(--gold),rgba(230,199,106,.2))}
+.oo-step .d{width:38px;height:38px;border-radius:11px;background:var(--gold-grad);display:grid;place-items:center;flex-shrink:0;color:var(--navy);z-index:1}
+.oo-step .d svg{width:20px;height:20px}
+.oo-step b{display:block;color:#fff;font-size:.95rem;font-family:'Inter'}
+.oo-step span{font-size:.82rem;color:rgba(255,255,255,.7)}
+.oo-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.oo-chips span{font-size:.74rem;background:rgba(230,199,106,.16);border:1px solid rgba(230,199,106,.35);color:var(--gold-lt);padding:4px 10px;border-radius:8px}
+@media(max-width:900px){.oo-hero{grid-template-columns:1fr;gap:34px}}
+</style>
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Live Demo · Jetzt selbst erleben</span>
-    <h1>Rufen Sie Leo an – tief integriert in <em>onOffice</em></h1>
-    <p>Erleben Sie live, wie Leo Anrufe entgegennimmt, Kunden im onOffice erkennt, Exposés versendet, Suchaufträge anlegt und Termine koordiniert. Antwortzeit unter 600 ms, Premium-Stimme, echte Echtzeit-Integration.</p>
-    <div class="hero-cta" style="margin-top:26px"><a class="btn btn-gold btn-lg" href="tel:+494074306953">Testnummer anrufen: 040 – 743 069 53</a></div>
-    <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-top:8px">Kostenlos testen • Keine Anmeldung nötig • Made in Hamburg</p>
+    <div class="oo-hero">
+      <div>
+        <span class="eyebrow">onOffice Marketplace Partner</span>
+        <h1>Tief integriert in <em>onOffice</em> – nicht daneben</h1>
+        <p>Anruf erkennen, Exposé versenden, Suchprofil anlegen, Termin buchen – jede Aktion landet in Echtzeit direkt in Ihrem onOffice. Über die offizielle API, Antwort in unter 600 ms.</p>
+        <div class="hero-cta" style="margin-top:26px"><a class="btn btn-gold btn-lg" href="tel:+494074306953">Live-Demo anrufen</a><a class="btn btn-light btn-lg" href="termin.html">Strategiegespräch</a></div>
+        <div class="oo-badge"><img src="https://www.ki-telefon-agent.com/wp-content/uploads/2026/03/onoffice-logo.avif" alt="onOffice">Autorisierter Marketplace-Partner · Made in Hamburg</div>
+      </div>
+      <div class="oo-flow">
+        <div class="oo-head"><div class="oo-logo"><img src="https://www.ki-telefon-agent.com/wp-content/uploads/2026/03/onoffice-logo.avif" alt="onOffice"></div><div class="live"><i></i>LIVE-INTEGRATION</div></div>
+        <div class="oo-step"><div class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 2 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12 12 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12 12 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><b>Eingehender Anruf</b><span>Lena erkennt den Anrufer über die Rufnummer</span></div></div>
+        <div class="oo-step"><div class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><div><b>KI verarbeitet das Anliegen</b><span>Echtzeit-Spracherkennung · Antwort &lt; 600 ms</span></div></div>
+        <div class="oo-step"><div class="d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 6"/></svg></div><div><b>onOffice wird aktualisiert</b><span>Automatisch während des Gesprächs</span>
+          <div class="oo-chips"><span>Kontakt erkannt</span><span>Aktivität</span><span>Exposé versendet</span><span>Rückrufaufgabe</span><span>Termin</span></div>
+        </div></div>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -372,3 +372,16 @@ footer a:hover{color:var(--gold-lt)}
 .cta-band h3{color:#fff;font-size:1.5rem;margin-bottom:4px}
 .cta-band p{color:rgba(255,255,255,.8);margin:0}
 @media(max-width:760px){.cta-band{flex-direction:column;align-items:flex-start;padding:28px 24px}}
+
+/* ===== Robot avatars, spacing, mobile header CTA ===== */
+.agent{padding:30px;gap:24px;align-items:center}
+.uc-media.robo{background:radial-gradient(circle at 50% 38%, #ffffff, var(--ivory) 72%);border:1px solid var(--line);display:grid;place-items:center;padding:24px;min-height:340px}
+.uc-media.robo img{width:auto;height:auto;max-width:62%;max-height:300px;min-height:0;border-radius:0;display:block}
+.uc-media.robo .badge-tl{background:#fff;border:1px solid var(--line);color:var(--gold-dk)}
+@media(max-width:960px){.uc-media.robo{min-height:240px}.uc-media.robo img{max-height:200px}}
+.mob-cta,.mob-tel{display:none}
+@media(max-width:960px){
+  .nav-cta .btn-ghost,.nav-cta .btn-gold{display:none}
+  .mob-tel{display:block;padding:12px 0;color:var(--gold-dk);font-weight:700;border-bottom:1px solid var(--line);width:100%}
+  .mob-cta{display:flex;justify-content:center;margin-top:14px;width:100%}
+}
