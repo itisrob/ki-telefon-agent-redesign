@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 270" width="340" height="270">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C76A"/><stop offset="1" stop-color="#C8A24B"/></linearGradient></defs>
+<rect x="92" y="40" width="156" height="100" rx="16" fill="#0B2A4A"/>
+<circle cx="124" cy="74" r="14" fill="url(#g)"/><path d="M118 74a6 6 0 0 1 12 0" fill="none" stroke="#0B2A4A" stroke-width="2.4"/>
+<rect x="148" y="64" width="78" height="9" rx="4.5" fill="#fff" opacity=".9"/><rect x="148" y="82" width="56" height="8" rx="4" fill="#7e93ac"/>
+<rect x="112" y="112" width="60" height="9" rx="4.5" fill="url(#g)"/>
+<g stroke="url(#g)" stroke-width="6" fill="none" stroke-linecap="round"><path d="M150 196a52 52 0 0 1 40-44"/><path d="M158 210a70 70 0 0 1 56-60" opacity=".55"/></g>
+<g transform="translate(60,170)"><circle cx="34" cy="34" r="34" fill="url(#g)"/><path d="M22 22h7l4 9-5 3a18 18 0 0 0 9 9l3-5 9 4v7a4 4 0 0 1-4 4A26 26 0 0 1 18 26a4 4 0 0 1 4-4z" fill="#0B2A4A"/></g>
+<path d="M210 196l18 18m0-18l-18 18" stroke="url(#g)" stroke-width="0" /><path d="M232 188l24-10-4 16 14 6-22 12 3-15z" fill="url(#g)"/>
+<text x="170" y="258" text-anchor="middle" font-family="Inter,Arial" font-size="15" font-weight="700" fill="#0B2A4A">Eingehender Anruf erkannt</text>
+</svg>

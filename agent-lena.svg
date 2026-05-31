@@ -1,31 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 230" width="220" height="230">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C76A"/><stop offset="1" stop-color="#C8A24B"/></linearGradient>
+    <linearGradient id="gL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C76A"/><stop offset="1" stop-color="#C8A24B"/></linearGradient>
+    <linearGradient id="vL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13509A"/><stop offset="1" stop-color="#0A2A57"/></linearGradient>
   </defs>
-  <!-- shoulders -->
-  <path d="M34 214 C34 168 70 150 110 150 C150 150 186 168 186 214 Z" fill="#0B2A4A"/>
-  <path d="M92 150 h36 v14 h-36 Z" fill="#0B2A4A"/>
-  <!-- collar accent (feminine) -->
-  <path d="M96 158 l14 12 14-12" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- headset band -->
-  <path d="M50 104 a60 60 0 0 1 120 0" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
-  <!-- head -->
-  <rect x="54" y="52" width="112" height="98" rx="40" fill="#0B2A4A"/>
-  <!-- side hair panels (feminine) -->
-  <rect x="48" y="74" width="14" height="54" rx="7" fill="url(#g)"/>
-  <rect x="158" y="74" width="14" height="54" rx="7" fill="url(#g)"/>
-  <!-- visor -->
-  <rect x="68" y="80" width="84" height="48" rx="24" fill="#06B6D4"/>
-  <!-- eyes + smile -->
-  <circle cx="94" cy="102" r="8" fill="#fff"/><circle cx="126" cy="102" r="8" fill="#fff"/>
-  <path d="M96 116 q14 11 28 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- earcups -->
-  <rect x="44" y="92" width="18" height="34" rx="9" fill="url(#g)"/>
-  <rect x="158" y="92" width="18" height="34" rx="9" fill="url(#g)"/>
-  <!-- mic boom -->
-  <path d="M53 118 q-12 20 16 30" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="71" cy="150" r="7" fill="url(#g)"/>
-  <!-- antenna -->
-  <line x1="110" y1="52" x2="110" y2="36" stroke="url(#g)" stroke-width="4.5" stroke-linecap="round"/>
-  <circle cx="110" cy="31" r="6.5" fill="url(#g)"/>
+  <style>
+    .floatL{animation:floatL 3.6s ease-in-out infinite;transform-origin:110px 130px}
+    @keyframes floatL{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .blinkL{animation:blinkL 4.2s infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes blinkL{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+    .pulseL{animation:pulseL 2s ease-in-out infinite}
+    @keyframes pulseL{0%,100%{opacity:.5;r:7}50%{opacity:1;r:9}}
+  </style>
+  <g class="floatL">
+    <!-- antenna glow -->
+    <circle cx="110" cy="31" r="11" fill="#E6C76A" opacity=".25" class="pulseL"/>
+    <line x1="110" y1="52" x2="110" y2="36" stroke="url(#gL)" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="110" cy="31" r="6.5" fill="url(#gL)"/>
+    <!-- shoulders -->
+    <path d="M34 224 C34 178 70 160 110 160 C150 160 186 178 186 224 Z" fill="#0B2A4A"/>
+    <path d="M96 168 l14 12 14-12" fill="none" stroke="url(#gL)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- headset band -->
+    <path d="M50 104 a60 60 0 0 1 120 0" fill="none" stroke="url(#gL)" stroke-width="8" stroke-linecap="round"/>
+    <!-- head -->
+    <rect x="54" y="52" width="112" height="98" rx="40" fill="#0B2A4A"/>
+    <!-- side hair panels -->
+    <rect x="48" y="74" width="14" height="54" rx="7" fill="url(#gL)"/>
+    <rect x="158" y="74" width="14" height="54" rx="7" fill="url(#gL)"/>
+    <!-- visor -->
+    <rect x="66" y="78" width="88" height="50" rx="25" fill="url(#vL)" stroke="url(#gL)" stroke-width="2.5"/>
+    <!-- happy eyes -->
+    <g class="blinkL"><circle cx="93" cy="100" r="8.5" fill="#fff"/><circle cx="127" cy="100" r="8.5" fill="#fff"/><circle cx="95" cy="98" r="3" fill="#E6C76A"/><circle cx="129" cy="98" r="3" fill="#E6C76A"/></g>
+    <!-- big happy smile -->
+    <path d="M92 113 q18 16 36 0" fill="none" stroke="#E6C76A" stroke-width="4" stroke-linecap="round"/>
+    <!-- cheeks -->
+    <circle cx="80" cy="113" r="4" fill="#E6C76A" opacity=".5"/><circle cx="140" cy="113" r="4" fill="#E6C76A" opacity=".5"/>
+    <!-- earcups -->
+    <rect x="44" y="92" width="18" height="34" rx="9" fill="url(#gL)"/>
+    <rect x="158" y="92" width="18" height="34" rx="9" fill="url(#gL)"/>
+    <!-- mic boom -->
+    <path d="M53 118 q-12 20 16 30" fill="none" stroke="url(#gL)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="71" cy="150" r="7" fill="url(#gL)"/>
+  </g>
 </svg>

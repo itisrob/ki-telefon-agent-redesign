@@ -1,29 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 230" width="220" height="230">
   <defs>
-    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C76A"/><stop offset="1" stop-color="#C8A24B"/></linearGradient>
+    <linearGradient id="gO" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C76A"/><stop offset="1" stop-color="#C8A24B"/></linearGradient>
+    <linearGradient id="vO" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13509A"/><stop offset="1" stop-color="#0A2A57"/></linearGradient>
   </defs>
-  <!-- shoulders -->
-  <path d="M34 214 C34 168 70 150 110 150 C150 150 186 168 186 214 Z" fill="#0B2A4A"/>
-  <path d="M92 150 h36 v14 h-36 Z" fill="#0B2A4A"/>
-  <!-- tie (masculine) -->
-  <path d="M110 158 l9 9 -9 26 -9 -26 Z" fill="url(#g2)"/>
-  <!-- headset band -->
-  <path d="M52 104 a58 58 0 0 1 116 0" fill="none" stroke="url(#g2)" stroke-width="8" stroke-linecap="round"/>
-  <!-- head (squarer) -->
-  <rect x="56" y="54" width="108" height="94" rx="24" fill="#0B2A4A"/>
-  <!-- visor -->
-  <rect x="70" y="80" width="80" height="46" rx="16" fill="#06B6D4"/>
-  <!-- eyes + mouth -->
-  <rect x="86" y="96" width="14" height="12" rx="4" fill="#fff"/>
-  <rect x="120" y="96" width="14" height="12" rx="4" fill="#fff"/>
-  <path d="M98 116 h24" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- earcups -->
-  <rect x="48" y="92" width="16" height="32" rx="6" fill="url(#g2)"/>
-  <rect x="156" y="92" width="16" height="32" rx="6" fill="url(#g2)"/>
-  <!-- mic boom -->
-  <path d="M55 116 q-11 20 16 30" fill="none" stroke="url(#g2)" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="73" cy="148" r="7" fill="url(#g2)"/>
-  <!-- antenna -->
-  <line x1="110" y1="54" x2="110" y2="38" stroke="url(#g2)" stroke-width="4.5" stroke-linecap="round"/>
-  <circle cx="110" cy="33" r="6.5" fill="url(#g2)"/>
+  <style>
+    .floatO{animation:floatO 3.9s ease-in-out infinite;transform-origin:110px 130px}
+    @keyframes floatO{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    .blinkO{animation:blinkO 5s infinite;transform-box:fill-box;transform-origin:center}
+    @keyframes blinkO{0%,90%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+    .pulseO{animation:pulseO 2.2s ease-in-out infinite}
+    @keyframes pulseO{0%,100%{opacity:.5}50%{opacity:1}}
+  </style>
+  <g class="floatO">
+    <circle cx="110" cy="33" r="11" fill="#E6C76A" opacity=".25" class="pulseO"/>
+    <line x1="110" y1="54" x2="110" y2="38" stroke="url(#gO)" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="110" cy="33" r="6.5" fill="url(#gO)"/>
+    <!-- shoulders -->
+    <path d="M34 224 C34 178 70 160 110 160 C150 160 186 178 186 224 Z" fill="#0B2A4A"/>
+    <!-- tie -->
+    <path d="M110 168 l9 9 -9 24 -9 -24 Z" fill="url(#gO)"/>
+    <!-- headset band -->
+    <path d="M52 104 a58 58 0 0 1 116 0" fill="none" stroke="url(#gO)" stroke-width="8" stroke-linecap="round"/>
+    <!-- head (squarer) -->
+    <rect x="56" y="54" width="108" height="94" rx="26" fill="#0B2A4A"/>
+    <!-- visor -->
+    <rect x="68" y="80" width="84" height="48" rx="20" fill="url(#vO)" stroke="url(#gO)" stroke-width="2.5"/>
+    <!-- happy eyes -->
+    <g class="blinkO"><circle cx="93" cy="101" r="8" fill="#fff"/><circle cx="127" cy="101" r="8" fill="#fff"/><circle cx="95" cy="99" r="2.8" fill="#E6C76A"/><circle cx="129" cy="99" r="2.8" fill="#E6C76A"/></g>
+    <!-- happy smile -->
+    <path d="M94 114 q16 14 32 0" fill="none" stroke="#E6C76A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="82" cy="114" r="3.5" fill="#E6C76A" opacity=".5"/><circle cx="138" cy="114" r="3.5" fill="#E6C76A" opacity=".5"/>
+    <!-- earcups -->
+    <rect x="48" y="92" width="16" height="32" rx="6" fill="url(#gO)"/>
+    <rect x="156" y="92" width="16" height="32" rx="6" fill="url(#gO)"/>
+    <!-- mic boom -->
+    <path d="M55 116 q-11 20 16 30" fill="none" stroke="url(#gO)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="73" cy="148" r="7" fill="url(#gO)"/>
+  </g>
 </svg>
