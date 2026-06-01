@@ -53,3 +53,22 @@ document.addEventListener('DOMContentLoaded',function(){
   if(document.body) build(); else document.addEventListener('DOMContentLoaded',build);
 })();
 function ktaConsent(all){try{localStorage.setItem('ktaConsent',all?'all':'essential');}catch(e){}var b=document.querySelector('.cookie-banner');if(b)b.remove();}
+
+// Animated hero accent (Lottie-style) injected into subpage heroes
+document.addEventListener('DOMContentLoaded',function(){
+  var svg='<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">'+
+    '<circle class="ring" cx="100" cy="100" r="88" stroke="#E6C76A" stroke-width="2" stroke-dasharray="5 13" opacity=".55"/>'+
+    '<circle cx="100" cy="100" r="62" stroke="#E6C76A" stroke-width="1.4" opacity=".3"/>'+
+    '<g fill="#E6C76A">'+
+    '<rect class="wavebar" x="62" y="86" width="9" height="28" rx="4.5"/>'+
+    '<rect class="wavebar" x="77" y="74" width="9" height="52" rx="4.5"/>'+
+    '<rect class="wavebar" x="92" y="62" width="9" height="76" rx="4.5"/>'+
+    '<rect class="wavebar" x="107" y="74" width="9" height="52" rx="4.5"/>'+
+    '<rect class="wavebar" x="122" y="86" width="9" height="28" rx="4.5"/>'+
+    '</g></svg>';
+  document.querySelectorAll('.page-hero').forEach(function(h){
+    if(h.querySelector('.hero-accent'))return;
+    var d=document.createElement('div'); d.className='hero-accent'; d.setAttribute('aria-hidden','true'); d.innerHTML=svg;
+    h.appendChild(d);
+  });
+});

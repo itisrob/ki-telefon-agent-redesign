@@ -467,3 +467,39 @@ footer a:hover{color:var(--gold-lt)}
   .nav-item.has-sub.open .nav-top svg{transform:rotate(180deg)}
   .nav-top{justify-content:space-between;width:100%}
 }
+
+/* ===== Refinements v5: mobile accordion fix, mobile logos, hero accents ===== */
+/* Robust mobile accordion for Lösungen */
+@media(max-width:960px){
+  .nav-links{top:70px}
+  .nav-links .nav-item.has-sub{display:block;width:100%}
+  .nav-links .nav-item.has-sub .nav-top{display:flex;justify-content:space-between;align-items:center;width:100%;padding:11px 0;border-bottom:1px solid var(--line)}
+  .nav-links .nav-item.has-sub .nav-top svg{display:inline-block;transition:transform .25s}
+  .nav-links .nav-item.has-sub.open .nav-top svg{transform:rotate(180deg)}
+  .nav-links .nav-item.has-sub .sub{position:static!important;transform:none!important;display:block!important;opacity:1!important;visibility:visible!important;max-height:0;overflow:hidden;border:0;border-left:2px solid var(--gold-lt);border-radius:0;margin:0 0 0 6px;padding:0 0 0 12px;min-width:0;box-shadow:none;background:transparent;transition:max-height .28s ease}
+  .nav-links .nav-item.has-sub.open .sub{max-height:340px;margin:6px 0 10px 6px}
+  .nav-links .nav-item.has-sub .sub a{border-bottom:1px solid var(--line)}
+}
+/* Mobile partner logos: more room, fewer per row */
+@media(max-width:600px){
+  .logo-strip{gap:26px 30px;justify-content:center}
+  .logo-strip img{height:36px;max-width:38%;opacity:.7}
+  .logo-ph{height:36px;min-width:84px}
+}
+
+/* Animated hero accents (Lottie-style, lightweight) */
+.page-hero::before{animation:heroDrift 11s ease-in-out infinite}
+@keyframes heroDrift{0%,100%{transform:translate(0,0)}50%{transform:translate(-16px,12px)}}
+.hero-accent{position:absolute;top:50%;right:5%;transform:translateY(-50%);width:300px;height:300px;pointer-events:none;opacity:.5;z-index:0}
+.page-hero .container{position:relative;z-index:1}
+@media(max-width:900px){.hero-accent{display:none}}
+.hero-accent .wavebar{transform-box:fill-box;transform-origin:center;animation:waveA 1.4s ease-in-out infinite}
+.hero-accent .wavebar:nth-child(2){animation-delay:.15s}.hero-accent .wavebar:nth-child(3){animation-delay:.3s}.hero-accent .wavebar:nth-child(4){animation-delay:.45s}.hero-accent .wavebar:nth-child(5){animation-delay:.6s}.hero-accent .wavebar:nth-child(6){animation-delay:.3s}.hero-accent .wavebar:nth-child(7){animation-delay:.15s}
+@keyframes waveA{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+.hero-accent .ring{transform-origin:center;animation:ringA 6s linear infinite}
+@keyframes ringA{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+/* 60-90s teaser video block */
+.teaser-block{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+.teaser-block .video-wrap{margin:0}
+@media(max-width:860px){.teaser-block{grid-template-columns:1fr;gap:26px}}

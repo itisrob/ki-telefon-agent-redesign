@@ -2,17 +2,32 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Über uns | AI Voice Impact – KI-Telefonie aus Hamburg</title>
-<meta name="description" content="AI Voice Impact UG aus Hamburg baut den zuverlässigsten KI-Telefonagenten für die Immobilienbranche – DSGVO-konform, empathisch und tief in onOffice integriert." />
+<title>Über uns | KI-Telefonie aus Hamburg – AI Voice Impact</title>
+<meta name="description" content="Das Team hinter dem KI-Telefon-Agenten: Juristen, Entwickler und Projektexperten aus Hamburg. Made in Hamburg, DSGVO mit Bankenstandard, persönlich und zuverlässig." />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+<style>
+.about-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+.about-hero img{width:100%;border-radius:var(--radius-lg);border:1px solid rgba(230,199,106,.3);box-shadow:var(--shadow-lg)}
+@media(max-width:900px){.about-hero{grid-template-columns:1fr;gap:30px}}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:42px}
+.team .person{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;text-align:center}
+.team .person img{width:104px;height:104px;border-radius:50%;object-fit:cover;border:3px solid var(--gold-lt);margin:0 auto 16px}
+.team .person .role{color:var(--gold-dk);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;margin:4px 0 10px}
+.office-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px}
+.office-grid img{width:100%;height:240px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)}
+.map-card{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;min-height:300px}
+.map-card iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+.contact-2{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;margin-top:42px}
+@media(max-width:860px){.team{grid-template-columns:1fr}.office-grid,.contact-2{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <header>
   <div class="container nav">
-    <a href="index.html" class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.3 3.6a6 6 0 0 1 5.1 5.1"/><path d="M14.5 7.2a3 3 0 0 1 2.4 2.4"/><path d="M6.5 4h2.5l1.3 3.2-1.9 1.2a11 11 0 0 0 5 5l1.2-1.9 3.2 1.3v2.5a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"/></svg></span><span>KI&nbsp;Telefon-Agent<small>AI VOICE IMPACT</small></span></a>
+    <a href="index.html" class="logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.3 3.6a6 6 0 0 1 5.1 5.1"/><path d="M14.5 7.2a3 3 0 0 1 2.4 2.4"/><path d="M6.5 4h2.5l1.3 3.2-1.9 1.2a11 11 0 0 0 5 5l1.2-1.9 3.2 1.3v2.5a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"/></svg></span><span>KI&nbsp;Telefon-Agent<small>AI VOICE IMPACT</small></span></a>
     <nav class="nav-links" id="navlinks"><div class="nav-item has-sub"><a href="onoffice.html" class="nav-top">Lösungen <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg></a><div class="sub"><a href="onoffice.html">onOffice-Integration</a><a href="custom.html">Custom CRM</a><a href="use-cases.html">Use Cases</a><a href="interview.html">Interview</a></div></div><a href="preise.html">Preise</a><a href="blog.html">Blog</a><a href="ueber-uns.html">Über uns</a><a href="tel:+494074302560" class="mob-tel">040 – 7430 2560</a><a href="termin.html" class="btn btn-gold mob-cta">Strategiegespräch</a></nav>
     <div class="nav-cta"><a href="tel:+494074302560" class="btn btn-ghost">040 – 7430 2560</a><a class="btn btn-gold" href="termin.html">Strategiegespräch</a><button class="burger" onclick="toggleNav()"><span></span><span></span><span></span></button></div>
   </div>
@@ -20,47 +35,96 @@
 
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow">Über uns</span>
-    <h1>KI-Telefonie aus <em>Hamburg</em></h1>
-    <p>Wir bauen den zuverlässigsten KI-Telefonagenten für die Immobilienbranche – DSGVO-konform, empathisch und tief in onOffice integriert.</p>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="grid g3" style="text-align:left">
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg></div><h3>Standort Hamburg</h3><p>Hohe Bleichen 8, 20354 Hamburg. Echtes Team vor Ort, persönlich erreichbar.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Sicherheit zuerst</h3><p>Volljurist (Christoph Scholz) als Geschäftsführer, TÜV-NORD-zertifizierter Datenschutz, EU AI Act konform.</p></div>
-      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Für Makler gebaut</h3><p>Tiefe onOffice-Integration und Prozesse, die Makler und Hausverwalter wirklich brauchen.</p></div>
-    </div>
-
-    <div class="secure" style="margin-top:40px">
+    <div class="about-hero">
       <div>
-        <span class="eyebrow">Unsere Mission</span>
-        <h2>Erreichbarkeit, die nie schläft</h2>
-        <p>AI Voice Impact wurde gegründet, um ein einfaches Versprechen einzulösen: kein verlorener Anruf, keine verlorenen Leads. Wir verbinden Premium-Sprachtechnologie mit echter CRM-Tiefe – und behalten dabei den Menschen im Blick. Lena & Leo sind keine kalten Roboter, sondern verlässliche Kollegen, die rund um die Uhr arbeiten.</p>
-        <div class="pill-row"><span>Made in Hamburg</span><span>onOffice Marketplace Partner</span><span>DSGVO Bankenstandard</span></div>
+        <span class="eyebrow">Made in Hamburg</span>
+        <h1>Ahoi und Moin</h1>
+        <p>Wir sind AI Voice Impact – das Unternehmen hinter dem KI-Telefon-Agenten, der moderne Kommunikation neu definiert. Unser Antrieb: KI-Telefonie, die Menschen entlastet und Kommunikation wieder angenehm macht. Mit eigener Dualplex-Spracharchitektur, EU-Hosting und 99,9 % Uptime.</p>
+        <div class="hero-cta" style="margin-top:24px"><a class="btn btn-gold btn-lg" href="termin.html">Lernen Sie uns kennen</a><a class="btn btn-light btn-lg" href="tel:+494074302560">040 – 7430 2560</a></div>
       </div>
-      <div class="badges">
-        <div class="badge"><b>2025</b><span>Gegründet in Hamburg</span></div>
-        <div class="badge"><b>100+</b><span>Sprachen unterstützt</span></div>
-        <div class="badge"><b>&lt; 600 ms</b><span>Antwortzeit der KI</span></div>
-        <div class="badge"><b>24/7</b><span>Erreichbarkeit</span></div>
-      </div>
+      <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/11/fjdQXXFjc3fQWCCI7VpaU.png" alt="Team AI Voice Impact vor der Hamburger Skyline">
     </div>
-    <div class="center" style="margin-top:40px"><a class="btn btn-gold btn-lg" href="termin.html">Lernen Sie uns im Strategiegespräch kennen →</a></div>
   </div>
 </section>
+
+<!-- MISSION -->
+<section class="reveal">
+  <div class="container">
+    <div class="center sec-head"><span class="eyebrow">Unsere Mission</span><h2>Kommunikation, die Menschen stärkt</h2><p class="lead">Wir setzen KI so ein, dass sie nicht distanziert wirkt, sondern Nähe schafft – mit Sprache, die in unter 600 ms antwortet, über 100 Sprachen beherrscht und auf Unterbrechungen in Echtzeit reagiert.</p></div>
+    <p class="center" style="max-width:780px;margin:18px auto 0">Als Team aus Juristen, Entwicklern und Projektexperten arbeiten wir pragmatisch, lösungsorientiert und ohne künstliche Komplexität. Unsere Infrastruktur läuft ausschließlich auf EU-Servern mit Datenresidenz-Garantie – weil Datenschutz keine Option, sondern Grundlage ist.</p>
+  </div>
+</section>
+
+<!-- WERTE -->
+<section class="soft reveal">
+  <div class="container">
+    <div class="center sec-head"><span class="eyebrow">Unsere Werte</span><h2>Wofür wir stehen</h2></div>
+    <div class="grid g3" style="margin-top:42px;text-align:left">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Ehrliche Technologie</h3><p>KI, die nicht ersetzt, sondern unterstützt – transparent, nachvollziehbar, menschennah. 99,9 % Uptime SLA. Call-Analytics mit Sentiment-Analyse für volle Transparenz.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Datenschutz aus Überzeugung</h3><p>EU-Region Frankfurt mit Datenresidenz-Garantie. TÜV-NORD-zertifizierter Datenschutz. Automatische Maskierung sensibler Daten. EU AI Act konform.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 9h.01M15 9h.01"/></svg></div><h3>Made in Hamburg</h3><p>Kurze Wege, direkte Abstimmung, schnelle Ergebnisse. Hanseatisch zuverlässig.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="reveal">
+  <div class="container">
+    <div class="center sec-head"><span class="eyebrow">Das Team</span><h2>Wer wir sind</h2><p class="lead">Drei Profile, ein Ziel: KI-Telefonie, der Makler vertrauen können.</p></div>
+    <div class="team">
+      <div class="person">
+        <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/11/Christoph-Scholz-profil-1.png" alt="Christoph Scholz">
+        <h3>Christoph Scholz</h3><div class="role">Recht & Compliance</div>
+        <p>Volljurist mit tiefem Immobilien- und Versicherungs-Know-how. Sorgt für DSGVO-Konformität, EU-AI-Act-Compliance und die automatische Maskierung sensibler Gesprächsdaten.</p>
+      </div>
+      <div class="person">
+        <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/11/Frank-Wilstermann-Profilbild-3.png" alt="Frank Wilstermann">
+        <h3>Frank Wilstermann</h3><div class="role">Projektmanagement & KI-Telefonie</div>
+        <p>25+ Jahre Erfahrung in Beratung, Vertrieb und E-Commerce. Steuert Einführung und Onboarding vom ersten Gespräch bis zum Live-Betrieb.</p>
+      </div>
+      <div class="person">
+        <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/11/Jonas-Nabbefeld-profilbild-1.png" alt="Jonas Nabbefeld">
+        <h3>Jonas Nabbefeld</h3><div class="role">Technik & KI-Architektur</div>
+        <p>10+ Jahre Software-Engineering. Verantwortet die Dualplex-Spracharchitektur, CRM-Integrationen und das EU-Hosting – mit Antwortzeiten unter 600 ms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDORT -->
+<section class="soft reveal">
+  <div class="container">
+    <div class="center sec-head"><span class="eyebrow">Standort & Kontakt</span><h2>Hamburg, Hohe Bleichen 8</h2></div>
+    <div class="contact-2">
+      <div class="card">
+        <h3>Kontakt</h3>
+        <p style="margin-top:8px"><strong>AI Voice Impact UG (haftungsbeschränkt)</strong><br>Hohe Bleichen 8<br>20354 Hamburg</p>
+        <p>Telefon: <a href="tel:+494074302560" style="color:var(--gold-dk)">040 – 7430 2560</a><br>E-Mail: <a href="mailto:support@ki-telefon-agent.com" style="color:var(--gold-dk)">support@ki-telefon-agent.com</a></p>
+        <p style="color:var(--muted);font-size:.9rem">Amtsgericht Hamburg · HRB 195056</p>
+        <div class="pill-row" style="margin-top:6px"><span style="background:var(--ivory-2);border:1px solid var(--line);color:var(--gold-dk);font-size:.74rem;padding:5px 11px;border-radius:8px">DSGVO Bankenstandard</span><span style="background:var(--ivory-2);border:1px solid var(--line);color:var(--gold-dk);font-size:.74rem;padding:5px 11px;border-radius:8px">onOffice Marketplace</span></div>
+      </div>
+      <div class="map-card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.27554510219!2d9.987471900000001!3d53.552848499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f3a1472ad43%3A0xed3f4b9b9b8592e5!2sAI%20Voice%20Impact%20%26%20KI-TELEFON-AGENT.com!5e0!3m2!1sde!2sde!4v1774860853395!5m2!1sde!2sde" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort AI Voice Impact Hamburg"></iframe>
+      </div>
+    </div>
+    <div class="office-grid">
+      <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/10/IMG_2741.jpeg" alt="AI Voice Impact Büro Hamburg – Innenansicht">
+      <img src="https://www.ki-telefon-agent.com/wp-content/uploads/2025/10/IMG_2743.jpeg" alt="AI Voice Impact Gebäude Hohe Bleichen 8 Hamburg">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0"><div class="container"><div class="funnel"><span class="eyebrow">Lernen Sie uns kennen</span><h2>Ruf an – erlebe die KI live</h2><p>In 60 Sekunden sprichst du mit dem KI-Telefonagenten. Kostenlos, keine Anmeldung.</p><div class="hero-cta" style="justify-content:center;margin-top:26px"><a class="btn btn-gold btn-lg" href="termin.html">Strategiegespräch buchen</a><a class="btn btn-light btn-lg" href="tel:+494074306953">Leo jetzt anrufen</a></div></div></div></section>
 
 <footer>
   <div class="container">
     <div class="foot-grid">
-      <div><div class="foot-logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.3 3.6a6 6 0 0 1 5.1 5.1"/><path d="M14.5 7.2a3 3 0 0 1 2.4 2.4"/><path d="M6.5 4h2.5l1.3 3.2-1.9 1.2a11 11 0 0 0 5 5l1.2-1.9 3.2 1.3v2.5a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"/></svg></span><span>KI Telefon-Agent</span></div><p style="color:rgba(255,255,255,.6);font-size:.9rem;max-width:300px">Der KI-Telefonagent mit echter onOffice-Integration. DSGVO mit Bankenstandard, Made in Hamburg.</p><div class="foot-badges"><span>DSGVO-konform</span><span>onOffice Marketplace</span><span>Made in Hamburg</span></div></div>
-      <div><h4>Produkt</h4><a href="onoffice.html">onOffice Integration</a><a href="custom.html">Custom CRM</a><a href="use-cases.html">Use Cases</a><a href="preise.html">Preise</a><a href="interview.html">Interview</a></div>
-      <div><h4>Unternehmen</h4><a href="ueber-uns.html">Über uns</a><a href="blog.html">Blog</a><a href="termin.html">Strategiegespräch</a><a href="tel:+494074302560">040 – 7430 2560</a></div>
+      <div><div class="foot-logo"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.3 3.6a6 6 0 0 1 5.1 5.1"/><path d="M14.5 7.2a3 3 0 0 1 2.4 2.4"/><path d="M6.5 4h2.5l1.3 3.2-1.9 1.2a11 11 0 0 0 5 5l1.2-1.9 3.2 1.3v2.5a2 2 0 0 1-2.2 2A16 16 0 0 1 4.5 6.2 2 2 0 0 1 6.5 4z"/></svg></span><span>KI Telefon-Agent</span></div><p style="color:rgba(255,255,255,.6);font-size:.9rem;max-width:300px">Der KI-Telefonagent mit echter onOffice-Integration. DSGVO mit Bankenstandard, Made in Hamburg.</p><div class="foot-badges"><span>DSGVO-konform</span><span>onOffice Marketplace</span><span>Made in Hamburg</span></div></div>
+      <div><h4>Produkt</h4><a href="onoffice.html">onOffice Integration</a><a href="custom.html">Custom CRM</a><a href="use-cases.html">Use Cases</a><a href="preise.html">Preise</a></div>
+      <div><h4>Unternehmen</h4><a href="ueber-uns.html">Über uns</a><a href="interview.html">Interview</a><a href="blog.html">Blog</a><a href="termin.html">Strategiegespräch</a></div>
       <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="avv.html">AVV</a></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 KI Telefon Agent · AI Voice Impact UG. Alle Rechte vorbehalten.</span><span>Hohe Bleichen 8 · 20354 Hamburg</span></div>
+    <div class="foot-bottom"><span>© 2026 KI Telefon-Agent · AI Voice Impact UG. Alle Rechte vorbehalten.</span><span>Hohe Bleichen 8 · 20354 Hamburg</span></div>
   </div>
 </footer>
 <script src="app.js"></script>
