@@ -435,3 +435,35 @@ footer a:hover{color:var(--gold-lt)}
 .logo-marquee img{height:34px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.78;transition:.2s}
 .logo-marquee img:hover{filter:none;opacity:1}
 @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== Refinements v4: partner logos, placeholders, mobile accordion, hover ===== */
+/* Partner logo strip with grayscale->color hover */
+.logo-strip{gap:30px 44px}
+.logo-strip img{height:42px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.58;transition:.25s ease}
+.logo-strip img:hover{filter:none;opacity:1;transform:scale(1.06)}
+.logo-ph{display:inline-flex;align-items:center;justify-content:center;height:42px;min-width:96px;padding:0 16px;border:1.5px dashed var(--gold-lt);border-radius:8px;color:var(--gold-dk);font-family:'Fraunces';font-weight:600;font-size:1rem;opacity:.85}
+
+/* Branded image placeholder */
+.img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gold-dk);font-weight:700;text-align:center;padding:18px;background:repeating-linear-gradient(45deg,#fff,#fff 14px,var(--ivory) 14px,var(--ivory) 28px);border:2px dashed var(--gold-lt);border-radius:16px}
+.img-ph small{color:var(--muted);font-weight:500;font-size:.8rem}
+.img-ph svg{width:38px;height:38px;color:var(--gold)}
+
+/* Hover polish */
+.nav-links>a{position:relative}
+.nav-links>a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.nav-links>a:hover::after{transform:scaleX(1)}
+.btn{transition:transform .18s, box-shadow .18s, filter .18s}
+.btn-gold:hover{filter:brightness(1.04)}
+.uc-media.robo img{transition:transform .4s ease}
+.uc-media.robo:hover img{transform:scale(1.04)}
+.card .ico{transition:transform .25s}
+.card:hover .ico{transform:translateY(-2px) rotate(-3deg)}
+
+/* Mobile: Lösungen as accordion (sub hidden until open) */
+@media(max-width:960px){
+  .nav-links .sub{display:none}
+  .nav-item.has-sub.open .sub{display:flex}
+  .nav-top svg{display:inline-block;transition:transform .2s}
+  .nav-item.has-sub.open .nav-top svg{transform:rotate(180deg)}
+  .nav-top{justify-content:space-between;width:100%}
+}
