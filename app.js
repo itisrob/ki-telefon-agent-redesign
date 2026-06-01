@@ -72,3 +72,18 @@ document.addEventListener('DOMContentLoaded',function(){
     h.appendChild(d);
   });
 });
+
+// Progressive Lottie enhancement: load player, replace SVG accents if available
+(function(){
+  var s=document.createElement('script');
+  s.src='https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js';
+  s.onload=function(){
+    if(!window.customElements)return;
+    customElements.whenDefined('lottie-player').then(function(){
+      document.querySelectorAll('.hero-accent').forEach(function(a){
+        a.innerHTML='<lottie-player src="ai-orb.lottie.json" autoplay loop background="transparent" speed="1" style="width:100%;height:100%"></lottie-player>';
+      });
+    }).catch(function(){});
+  };
+  document.head.appendChild(s);
+})();

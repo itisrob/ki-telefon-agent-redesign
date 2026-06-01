@@ -503,3 +503,30 @@ footer a:hover{color:var(--gold-lt)}
 .teaser-block{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
 .teaser-block .video-wrap{margin:0}
 @media(max-width:860px){.teaser-block{grid-template-columns:1fr;gap:26px}}
+
+/* ===== Refinements v6: mobile dropdown stack, hovers, lottie, spacing ===== */
+/* FIX mobile Lösungen: items stacked vertically + clickable */
+@media(max-width:960px){
+  .nav-links .nav-item.has-sub .sub{display:flex!important;flex-direction:column!important;align-items:stretch}
+  .nav-links .nav-item.has-sub .sub a{display:block;width:100%;text-align:left}
+}
+/* Pricing hover */
+.plan{transition:transform .25s, box-shadow .25s, border-color .25s}
+.plan:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+.plan:hover .price{color:var(--gold-dk)}
+/* Team / cards hover polish */
+.team .person{transition:transform .25s, box-shadow .25s, border-color .25s}
+.team .person:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold-lt)}
+.team .person img{transition:transform .3s}
+.team .person:hover img{transform:scale(1.05)}
+.uc-media.robo{transition:transform .3s, box-shadow .3s}
+.uc-media.robo:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.crm-logos .crm,.badge{transition:transform .25s, box-shadow .25s, border-color .25s}
+.badge:hover{border-color:var(--gold-lt)}
+/* Wider lead form */
+.form-card{max-width:800px}
+/* Blog post hero: more air under author */
+.iv-meta{margin-bottom:30px}
+.article-hero{margin-top:18px}
+/* Lottie player sizing in hero accent */
+.hero-accent lottie-player,.hero-accent dotlottie-player{width:100%;height:100%;display:block}
