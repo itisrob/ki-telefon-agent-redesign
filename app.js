@@ -73,15 +73,26 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 
-// Progressive Lottie enhancement: load player, replace SVG accents if available
+// Progressive Lottie enhancement: load player, pick a page-specific animation
 (function(){
+  var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  var map={
+    'onoffice.html':'anim-onoffice.json',
+    'custom.html':'anim-custom.json',
+    'use-cases.html':'anim-usecases.json',
+    'preise.html':'anim-preise.json',
+    'blog.html':'anim-blog.json',
+    'ueber-uns.html':'anim-ueber.json',
+    'termin.html':'anim-termin.json'
+  };
+  var file=map[page]||'ai-orb.lottie.json';
   var s=document.createElement('script');
   s.src='https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js';
   s.onload=function(){
     if(!window.customElements)return;
     customElements.whenDefined('lottie-player').then(function(){
       document.querySelectorAll('.hero-accent').forEach(function(a){
-        a.innerHTML='<lottie-player src="ai-orb.lottie.json" autoplay loop background="transparent" speed="1" style="width:100%;height:100%"></lottie-player>';
+        a.innerHTML='<lottie-player src="'+file+'" autoplay loop background="transparent" speed="1" style="width:100%;height:100%"></lottie-player>';
       });
     }).catch(function(){});
   };
