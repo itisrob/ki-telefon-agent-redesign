@@ -100,6 +100,21 @@ document.addEventListener('DOMContentLoaded',function(){
   document.head.appendChild(s);
 })();
 
+// Aktiven Menüpunkt markieren (gold + Unterstrich, inkl. Dropdown)
+document.addEventListener('DOMContentLoaded',function(){
+  var page=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+  if(!page) page='index.html';
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    if(a.classList.contains('btn')) return;
+    var href=(a.getAttribute('href')||'').toLowerCase().split('#')[0].split('?')[0];
+    if(href && href===page){
+      a.classList.add('active');
+      var sub=a.closest('.nav-item.has-sub');
+      if(sub){var top=sub.querySelector('.nav-top'); if(top) top.classList.add('active-parent');}
+    }
+  });
+});
+
 // Media-Schutz: Download/Drag/Rechtsklick auf Bilder & Videos unterbinden (Deterrent)
 (function(){
   document.addEventListener('contextmenu',function(e){

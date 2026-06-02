@@ -1,7 +1,7 @@
 /* =====================================================================
    KI TELEFON AGENT — Blau-Gold Corporate Identity (Premium B2B)
    Navy #0B2A4A · Gold #C8A24B/#E6C76A · Ivory #FBF8F1
-   Headings: Fraunces (Serif) · Body: Inter
+   Headings: Plus Jakarta Sans · Body: Inter
    ===================================================================== */
 :root{
   --navy:#0B2A4A;
@@ -28,7 +28,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Fraunces','Georgia',serif;line-height:1.12;color:var(--navy);letter-spacing:-.01em;font-weight:600}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.12;color:var(--navy);letter-spacing:-.01em;font-weight:600}
 h1{font-size:clamp(2.3rem,5vw,4rem)}
 h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
 h3{font-size:1.3rem;font-weight:600}
@@ -59,7 +59,7 @@ section{padding:90px 0}
 /* Header */
 header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{display:flex;align-items:center;gap:12px;font-family:'Fraunces';font-weight:600;font-size:1.2rem;color:var(--navy)}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Plus Jakarta Sans';font-weight:600;font-size:1.2rem;color:var(--navy)}
 .logo .mark{width:42px;height:42px;border-radius:12px;background:var(--navy-grad);display:grid;place-items:center;border:1.5px solid var(--gold);box-shadow:0 6px 16px -6px rgba(11,42,74,.5)}
 .logo .mark svg{width:21px;height:21px;color:var(--gold-lt)}
 .logo small{display:block;font-family:'Inter';font-size:.6rem;font-weight:600;letter-spacing:.18em;color:var(--gold-dk);text-transform:uppercase;margin-top:1px}
@@ -91,7 +91,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 /* Hero call card */
 .call-card{background:rgba(255,255,255,.06);border:1px solid rgba(230,199,106,.28);border-radius:var(--radius-lg);padding:26px;backdrop-filter:blur(8px);box-shadow:var(--shadow-lg)}
 .call-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}
-.avatar{width:54px;height:54px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;font-family:'Fraunces';font-weight:600;color:var(--navy);font-size:1.3rem;flex-shrink:0}
+.avatar{width:54px;height:54px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;font-family:'Plus Jakarta Sans';font-weight:600;color:var(--navy);font-size:1.3rem;flex-shrink:0}
 .call-head b{color:#fff;font-size:1.06rem;display:block;font-family:'Inter';font-weight:600}
 .call-head span{color:var(--gold-lt);font-size:.82rem}
 .live-dot{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:.76rem;color:#7ee0b0;font-weight:600}
@@ -109,7 +109,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 .logos{padding:44px 0;border-bottom:1px solid var(--line);background:var(--ivory)}
 .logos p{text-align:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:22px}
 .logo-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 40px;align-items:center}
-.logo-strip span{font-family:'Fraunces';font-weight:600;color:#9fb0c4;font-size:1.1rem}
+.logo-strip span{font-family:'Plus Jakarta Sans';font-weight:600;color:#9fb0c4;font-size:1.1rem}
 
 /* Cards */
 .grid{display:grid;gap:24px}
@@ -123,7 +123,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 .card h3{margin-bottom:9px}
 .card p{font-size:.95rem}
 .soft{background:var(--ivory)}
-.num-badge{font-family:'Fraunces';font-size:1.5rem;color:var(--gold);font-weight:600}
+.num-badge{font-family:'Plus Jakarta Sans';font-size:1.5rem;color:var(--gold);font-weight:600}
 
 /* Section heading */
 .sec-head{max-width:720px}
@@ -132,7 +132,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 /* Steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative}
-.step .n{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--gold-lt);font-family:'Fraunces';font-size:1.3rem;display:grid;place-items:center;margin-bottom:16px}
+.step .n{width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--gold-lt);font-family:'Plus Jakarta Sans';font-size:1.3rem;display:grid;place-items:center;margin-bottom:16px}
 .step h3{margin-bottom:8px}
 
 /* Use-case row */
@@ -171,7 +171,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 /* FAQ */
 .faq{max-width:840px;margin:0 auto}
 .qa{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
-.qa summary{padding:20px 24px;font-weight:600;font-family:'Fraunces';font-size:1.08rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.qa summary{padding:20px 24px;font-weight:600;font-family:'Plus Jakarta Sans';font-size:1.08rem;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary::after{content:"+";font-size:1.5rem;color:var(--gold-dk);transition:.2s;font-family:'Inter'}
 .qa[open] summary::after{transform:rotate(45deg)}
@@ -183,7 +183,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 .plan.featured{border:2px solid var(--gold);box-shadow:var(--shadow-lg);position:relative}
 .plan.featured .ribbon{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold-grad);color:var(--navy);font-size:.74rem;font-weight:700;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
 .plan h3{font-size:1.35rem}
-.price{font-family:'Fraunces';font-size:2.7rem;font-weight:600;color:var(--navy);margin:12px 0 2px}
+.price{font-family:'Plus Jakarta Sans';font-size:2.7rem;font-weight:600;color:var(--navy);margin:12px 0 2px}
 .price small{font-size:1rem;font-weight:500;color:var(--muted);font-family:'Inter'}
 .plan .mins{color:var(--gold-dk);font-weight:600;font-size:.95rem;margin-bottom:6px}
 .plan ul{list-style:none;margin:18px 0;flex:1}
@@ -196,7 +196,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 .secure .eyebrow{color:var(--gold-lt)}.secure .eyebrow::before{background:var(--gold-lt)}
 .badges{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .badge{background:rgba(255,255,255,.06);border:1px solid rgba(230,199,106,.22);border-radius:14px;padding:18px}
-.badge b{color:var(--gold-lt);font-family:'Fraunces';display:block;margin-bottom:3px;font-size:1.15rem}
+.badge b{color:var(--gold-lt);font-family:'Plus Jakarta Sans';display:block;margin-bottom:3px;font-size:1.15rem}
 .badge span{font-size:.85rem;color:rgba(255,255,255,.75)}
 .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .pill-row span{font-size:.74rem;background:rgba(255,255,255,.07);border:1px solid rgba(230,199,106,.25);padding:5px 12px;border-radius:8px;color:rgba(255,255,255,.85)}
@@ -204,7 +204,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 /* Testimonial */
 .quote{max-width:840px;margin:0 auto;text-align:center}
 .stars{color:var(--gold);font-size:1.4rem;letter-spacing:4px;margin-bottom:20px}
-.quote blockquote{font-family:'Fraunces';font-size:1.6rem;line-height:1.5;font-weight:500;color:var(--navy);margin-bottom:22px;font-style:italic}
+.quote blockquote{font-family:'Plus Jakarta Sans';font-size:1.6rem;line-height:1.5;font-weight:500;color:var(--navy);margin-bottom:22px;font-style:italic}
 .quote cite{font-style:normal;color:var(--muted);font-weight:600}
 
 /* CTA / Funnel */
@@ -229,12 +229,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,248,241,.88);backdro
 .iv-hero h1{color:#fff;max-width:800px}
 .iv-meta{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin-top:22px;color:rgba(255,255,255,.8);font-size:.92rem}
 .iv-meta .who{display:flex;align-items:center;gap:12px}
-.iv-meta .who .av{width:50px;height:50px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;color:var(--navy);font-family:'Fraunces';font-weight:600;font-size:1.2rem}
+.iv-meta .who .av{width:50px;height:50px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;color:var(--navy);font-family:'Plus Jakarta Sans';font-weight:600;font-size:1.2rem}
 .article{max-width:760px;margin:0 auto}
 .qa-block{margin-bottom:28px}
-.qa-block .q{font-family:'Fraunces';font-size:1.2rem;color:var(--navy);font-weight:600;margin-bottom:10px;padding-left:18px;border-left:3px solid var(--gold)}
+.qa-block .q{font-family:'Plus Jakarta Sans';font-size:1.2rem;color:var(--navy);font-weight:600;margin-bottom:10px;padding-left:18px;border-left:3px solid var(--gold)}
 .qa-block .ans p{color:var(--ink);font-size:1.04rem;margin-bottom:12px}
-.pullquote{background:var(--ivory);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:24px 28px;margin:30px 0;font-family:'Fraunces';font-size:1.3rem;font-style:italic;color:var(--navy);line-height:1.45}
+.pullquote{background:var(--ivory);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:24px 28px;margin:30px 0;font-family:'Plus Jakarta Sans';font-size:1.3rem;font-style:italic;color:var(--navy);line-height:1.45}
 
 /* Legal pages */
 .legal{max-width:820px;margin:0 auto}
@@ -271,7 +271,7 @@ footer a:hover{color:var(--gold-lt)}
 .foot-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
 .foot-logo .mark{width:40px;height:40px;border-radius:11px;background:var(--navy-grad);border:1.5px solid var(--gold);display:grid;place-items:center}
 .foot-logo .mark svg{width:20px;height:20px;color:var(--gold-lt)}
-.foot-logo span{font-family:'Fraunces';color:#fff;font-size:1.1rem}
+.foot-logo span{font-family:'Plus Jakarta Sans';color:#fff;font-size:1.1rem}
 
 /* Responsive */
 @media(max-width:960px){
@@ -441,7 +441,7 @@ footer a:hover{color:var(--gold-lt)}
 .logo-strip{gap:30px 44px}
 .logo-strip img{height:42px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.58;transition:.25s ease}
 .logo-strip img:hover{filter:none;opacity:1;transform:scale(1.06)}
-.logo-ph{display:inline-flex;align-items:center;justify-content:center;height:42px;min-width:96px;padding:0 16px;border:1.5px dashed var(--gold-lt);border-radius:8px;color:var(--gold-dk);font-family:'Fraunces';font-weight:600;font-size:1rem;opacity:.85}
+.logo-ph{display:inline-flex;align-items:center;justify-content:center;height:42px;min-width:96px;padding:0 16px;border:1.5px dashed var(--gold-lt);border-radius:8px;color:var(--gold-dk);font-family:'Plus Jakarta Sans';font-weight:600;font-size:1rem;opacity:.85}
 
 /* Branded image placeholder */
 .img-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--gold-dk);font-weight:700;text-align:center;padding:18px;background:repeating-linear-gradient(45deg,#fff,#fff 14px,var(--ivory) 14px,var(--ivory) 28px);border:2px dashed var(--gold-lt);border-radius:16px}
@@ -534,3 +534,15 @@ footer a:hover{color:var(--gold-lt)}
 /* Media-Schutz */
 img,video{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;}
 .video-embed{position:relative;}
+
+/* Aktiver Menüpunkt (gold + Unterstrich), inkl. Dropdown */
+.nav-top{position:relative}
+.nav-links a.active{color:var(--gold-dk)!important}
+.nav-links>a.active::after{transform:scaleX(1)!important;bottom:-4px}
+.nav-top.active-parent{color:var(--gold-dk)!important}
+.nav-top.active-parent::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--gold);transform:scaleX(1)}
+.sub a.active{color:var(--gold-dk)!important;background:rgba(200,162,75,.14);font-weight:600}
+@media(max-width:960px){
+  .nav-links a.active::after,.nav-top.active-parent::after{display:none}
+  .nav-links a.active,.sub a.active{box-shadow:inset 3px 0 0 var(--gold);padding-left:10px}
+}
