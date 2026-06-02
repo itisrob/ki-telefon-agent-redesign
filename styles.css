@@ -530,3 +530,7 @@ footer a:hover{color:var(--gold-lt)}
 .article-hero{margin-top:18px}
 /* Lottie player sizing in hero accent */
 .hero-accent lottie-player,.hero-accent dotlottie-player{width:100%;height:100%;display:block}
+
+/* Media-Schutz */
+img,video{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-user-select:none;user-select:none;}
+.video-embed{position:relative;}
