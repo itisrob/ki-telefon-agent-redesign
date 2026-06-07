@@ -392,7 +392,7 @@ footer a:hover{color:var(--gold-lt)}
 /* Lena & Leo team cards (image on top, generous spacing) */
 .agent{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:0;overflow:hidden;align-items:stretch}
 .agent .ava{width:100%;height:248px;background:radial-gradient(circle at 50% 42%,#ffffff,var(--ivory) 72%);display:grid;place-items:center;border-bottom:1px solid var(--line)}
-.agent .ava img{width:auto;height:200px;object-fit:contain}
+.agent .ava img{width:100%;height:100%;object-fit:cover;display:block}
 .agent .txt{padding:28px}
 .agent .txt .tag{margin-bottom:14px}
 
