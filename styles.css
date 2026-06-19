@@ -55,8 +55,10 @@ section{padding:86px 0}
 .btn-navy:hover{background:var(--navy-900);transform:translateY(-2px)}
 .btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--line-2)}
 .btn-ghost:hover{border-color:var(--navy);background:#fff}
-.btn-light{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(230,199,106,.45)}
-.btn-light:hover{background:rgba(230,199,106,.16)}
+.btn-light{background:#fff;color:var(--navy);border:1px solid var(--line-2)}
+.btn-light:hover{border-color:var(--navy)}
+.funnel .btn-light,.cta-band .btn-light,.secure .btn-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(230,199,106,.45)}
+.funnel .btn-light:hover,.cta-band .btn-light:hover,.secure .btn-light:hover{background:rgba(230,199,106,.16)}
 .btn-lg{padding:16px 30px;font-size:1.02rem}
 
 /* Header — floating pill */
