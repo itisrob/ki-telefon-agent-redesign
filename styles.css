@@ -129,9 +129,9 @@ header{position:sticky;top:0;z-index:60;background:transparent;padding:14px 0}
 .logos p{text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:22px}
 .logo-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:26px 40px;align-items:center}
 .logo-strip span{font-family:'Plus Jakarta Sans';font-weight:700;color:#6b7488;font-size:1.05rem}
-.logo-strip{gap:18px 22px}
-.logo-strip img{height:48px;width:auto;max-width:190px;object-fit:contain;background:#fff;padding:14px 22px;border-radius:12px;border:1px solid var(--line);opacity:.95;transition:.25s ease}
-.logo-strip img:hover{opacity:1;transform:scale(1.05);border-color:var(--line-2)}
+.logo-strip{gap:16px 20px}
+.logo-strip img{height:74px;width:auto;max-width:250px;object-fit:contain;background:#fff;padding:10px 20px;border-radius:12px;border:1px solid var(--line);opacity:.96;transition:.25s ease}
+.logo-strip img:hover{opacity:1;transform:scale(1.04);border-color:var(--line-2)}
 .logo-ph{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:96px;padding:0 16px;border:1px solid var(--line-2);border-radius:8px;color:var(--muted);font-family:var(--mono);font-weight:600;font-size:.9rem}
 
 /* Cards */
@@ -468,8 +468,8 @@ footer a:hover{color:var(--gold)}
   .nav-links .nav-item.has-sub .sub a{display:block;width:100%;text-align:left;border-bottom:1px solid var(--line)}
 }
 @media(max-width:600px){
-  .logo-strip{gap:14px 16px;justify-content:center}
-  .logo-strip img{height:24px;max-width:42%;opacity:.95;padding:8px 12px}
+  .logo-strip{gap:12px 14px;justify-content:center}
+  .logo-strip img{height:52px;max-width:44%;opacity:.96;padding:8px 14px}
   .logo-ph{height:34px;min-width:84px}
 }
 
