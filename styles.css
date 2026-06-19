@@ -41,11 +41,11 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;position:relative;
   background-color:#070912;
   background-image:
-    radial-gradient(1000px 740px at 2% -8%,rgba(74,134,255,.50),transparent 58%),
-    radial-gradient(980px 740px at 106% 0%,rgba(155,110,245,.44),transparent 58%),
-    radial-gradient(860px 660px at 92% 120%,rgba(230,199,106,.26),transparent 60%),
-    radial-gradient(800px 620px at 8% 118%,rgba(45,205,210,.20),transparent 60%),
-    radial-gradient(720px 560px at 52% 46%,rgba(96,124,235,.12),transparent 64%);
+    radial-gradient(960px 720px at 0% 4%,rgba(74,134,255,.30),transparent 56%),
+    radial-gradient(940px 720px at 108% 10%,rgba(155,110,245,.26),transparent 56%),
+    radial-gradient(900px 680px at 90% 118%,rgba(230,199,106,.30),transparent 60%),
+    radial-gradient(820px 620px at 8% 116%,rgba(45,205,210,.18),transparent 60%),
+    radial-gradient(760px 580px at 52% 50%,rgba(96,124,235,.10),transparent 64%);
   background-attachment:fixed;background-repeat:no-repeat}
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.06;color:#fff;letter-spacing:-.025em;font-weight:800}
 h1{font-size:clamp(2.5rem,5.6vw,4.4rem)}
@@ -95,12 +95,15 @@ header{position:sticky;top:0;z-index:60;background:transparent;padding:14px 0}
 .burger span{width:24px;height:2px;background:#fff;border-radius:2px}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;padding:78px 0 84px;border-bottom:1px solid var(--line)}
+.hero{position:relative;overflow:hidden;padding:78px 0 84px;border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 620px at 80% 16%,rgba(230,199,106,.22),transparent 60%),
+    radial-gradient(760px 560px at 6% 88%,rgba(230,199,106,.12),transparent 60%)}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;-webkit-mask:radial-gradient(900px 520px at 70% 8%,#000,transparent 72%);mask:radial-gradient(900px 520px at 70% 8%,#000,transparent 72%)}
 .hero::after{display:none}
 .hero .container{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
 .hero h1{color:#fff;margin-bottom:20px}
-.hero h1 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.hero h1 .hl{background:linear-gradient(100deg,#F0D98A,#E6C76A 45%,#C8A24B);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
 .hero p.lead{color:var(--muted)}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 24px}
 .trust-row{display:flex;gap:14px 22px;flex-wrap:wrap;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -529,3 +532,9 @@ img,video{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-us
 .card,.step,.plan,.funnel,.secure,.compare .col,.review,.crm-mock,.crm-row,.agent,.qa,.alert,.badge,.bento .tile,.uc-media,.cta-band{
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .uc-media,.video-wrap{background:var(--panel)}
+
+/* Partner logos: single even row on desktop */
+@media(min-width:961px){
+  .logo-strip{flex-wrap:nowrap;gap:14px}
+  .logo-strip img{flex:1 1 0;min-width:0;max-width:none}
+}
