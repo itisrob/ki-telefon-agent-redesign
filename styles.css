@@ -38,11 +38,14 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;position:relative}
-body::before{content:"";position:fixed;inset:0;z-index:-1;background:
-  radial-gradient(680px 460px at 10% -4%,rgba(60,120,240,.16),transparent 60%),
-  radial-gradient(620px 480px at 96% 8%,rgba(155,140,240,.13),transparent 60%),
-  radial-gradient(560px 420px at 50% 108%,rgba(230,199,106,.07),transparent 60%);pointer-events:none}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;position:relative;
+  background-color:#080A12;
+  background-image:
+    radial-gradient(900px 640px at 6% -6%,rgba(70,130,255,.30),transparent 62%),
+    radial-gradient(860px 660px at 102% 4%,rgba(150,110,240,.24),transparent 62%),
+    radial-gradient(820px 600px at 88% 120%,rgba(230,199,106,.14),transparent 60%),
+    radial-gradient(700px 560px at 14% 116%,rgba(45,200,200,.10),transparent 60%);
+  background-attachment:fixed;background-repeat:no-repeat}
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans','Inter',sans-serif;line-height:1.06;color:#fff;letter-spacing:-.025em;font-weight:800}
 h1{font-size:clamp(2.5rem,5.6vw,4.4rem)}
 h2{font-size:clamp(2rem,4vw,3rem)}
@@ -125,8 +128,8 @@ header{position:sticky;top:0;z-index:60;background:transparent;padding:14px 0}
 .logos p{text-align:center;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:22px}
 .logo-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:26px 40px;align-items:center}
 .logo-strip span{font-family:'Plus Jakarta Sans';font-weight:700;color:#6b7488;font-size:1.05rem}
-.logo-strip img{height:40px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.5;transition:.25s ease}
-.logo-strip img:hover{filter:none;opacity:1;transform:scale(1.05)}
+.logo-strip img{height:30px;width:auto;max-width:130px;object-fit:contain;background:#fff;padding:9px 16px;border-radius:10px;border:1px solid var(--line);opacity:.92;transition:.25s ease}
+.logo-strip img:hover{opacity:1;transform:scale(1.05);border-color:var(--line-2)}
 .logo-ph{display:inline-flex;align-items:center;justify-content:center;height:40px;min-width:96px;padding:0 16px;border:1px solid var(--line-2);border-radius:8px;color:var(--muted);font-family:var(--mono);font-weight:600;font-size:.9rem}
 
 /* Cards */
@@ -463,8 +466,8 @@ footer a:hover{color:var(--gold)}
   .nav-links .nav-item.has-sub .sub a{display:block;width:100%;text-align:left;border-bottom:1px solid var(--line)}
 }
 @media(max-width:600px){
-  .logo-strip{gap:24px 28px;justify-content:center}
-  .logo-strip img{height:34px;max-width:38%;opacity:.6}
+  .logo-strip{gap:14px 16px;justify-content:center}
+  .logo-strip img{height:24px;max-width:42%;opacity:.95;padding:8px 12px}
   .logo-ph{height:34px;min-width:84px}
 }
 
