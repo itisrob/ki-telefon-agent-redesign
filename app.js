@@ -131,3 +131,28 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   });
 })();
+
+// Count-up animation for stats (data-count)
+document.addEventListener('DOMContentLoaded',function(){
+  var els=document.querySelectorAll('[data-count]');
+  if(!els.length) return;
+  function fmt(v,dec){var s=dec?v.toFixed(dec):String(Math.round(v));return s.replace('.',',');}
+  function run(el){
+    var target=parseFloat(el.getAttribute('data-count'))||0;
+    var dec=parseInt(el.getAttribute('data-dec')||'0',10);
+    var pre=el.getAttribute('data-prefix')||'';
+    var suf=el.getAttribute('data-suffix')||'';
+    var dur=1200,start=null;
+    function step(ts){
+      if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+      var eased=1-Math.pow(1-p,3);
+      el.innerHTML=pre+fmt(target*eased,dec)+suf;
+      if(p<1)requestAnimationFrame(step);else el.innerHTML=pre+fmt(target,dec)+suf;
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io.unobserve(x.target);}});},{threshold:.4});
+    els.forEach(function(el){io.observe(el);});
+  } else { els.forEach(run); }
+});
